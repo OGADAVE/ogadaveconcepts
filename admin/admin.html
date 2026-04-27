@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | Oga Dave Concepts</title>
+
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+body {
+  font-family: Poppins, sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+h1 {
+  color: gold;
+  text-align: center;
+}
+
+section {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #222;
+  border-radius: 12px;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hidden { display:none; }
+
+.toggle-row {
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>OGA DAVE CONCEPTS - ADMIN DASHBOARD</h1>
+
+<!-- AUTH MODAL -->
+<div id="authModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:999;">
+  <div style="background:#111;padding:20px;border-radius:12px;width:90%;max-width:350px;">
+    <h2 style="color:gold;text-align:center;">Admin Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button id="loginBtn">Login</button>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:999;">
+  <div style="background:#111;padding:20px;border-radius:12px;width:95%;max-width:500px;max-height:90vh;overflow:auto;">
+
+    <h3 style="color:gold;">Edit Content</h3>
+
+    <input id="editTitle" placeholder="Title">
+    <textarea id="editDescription" placeholder="Description"></textarea>
+
+    <!-- BLOG ONLY -->
+    <textarea id="editContent" placeholder="Full Content (Blog only)" class="hidden"></textarea>
+
+    <!-- AIRDROP ONLY -->
+    <input id="editReward" placeholder="Reward" class="hidden">
+    <input id="editLink" placeholder="Link">
+    <input id="editReferral" placeholder="Referral Link" class="hidden">
+    <input id="editEndDate" type="datetime-local" class="hidden">
+
+    <!-- TAGS -->
+    <div class="toggle-row">
+      <label>🔥 Hot</label>
+      <input type="checkbox" id="editHot">
+    </div>
+
+    <div class="toggle-row">
+      <label>🆕 New</label>
+      <input type="checkbox" id="editNew">
+    </div>
+
+    <div class="toggle-row">
+      <label>📌 Featured</label>
+      <input type="checkbox" id="editFeatured">
+    </div>
+
+    <!-- IMAGE -->
+    <input type="file" id="editImage">
+    <img id="editPreview" style="width:100%;margin-top:10px;border-radius:8px;">
+
+    <button id="saveEditBtn">Save Changes</button>
+    <button onclick="closeEditModal()" style="background:#333;margin-top:10px;">Cancel</button>
+  </div>
+</div>
+
+<!-- LIVE POSTS -->
+<section>
+  <h2>📂 Manage Posts</h2>
+  <div id="postsContainer"></div>
+</section>
+
+<!-- DASHBOARD -->
+<div id="post-section" class="hidden">
+
+  <button id="logoutBtn" class="logout">Logout</button>
+
+  <!-- 📊 ANALYTICS DASHBOARD -->
+<section id="analytics" style="margin-bottom:20px;">
+  <h2>📊 Live Analytics</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
+    <div style="background:#000;padding:10px;border-radius:10px;">
+      📢 Blogs: <span id="totalBlogs">0</span>
+    </div>
+
+    <div style="background:#000;padding:10px;border-radius:10px;">
+      🚀 Airdrops: <span id="totalAirdrops">0</span>
+    </div>
+
+    <div style="background:#000;padding:10px;border-radius:10px;">
+      🔥 Hot: <span id="hotAirdrops">0</span>
+    </div>
+
+    <div style="background:#000;padding:10px;border-radius:10px;">
+      🆕 New: <span id="newAirdrops">0</span>
+    </div>
+  </div>
+</section>
+
+  <!-- BLOG  -->
+  <h2>📢 Blog Post</h2>
+  <section>
+    <input id="postTitle" placeholder="Title">
+    <input id="postDescription" placeholder="Description">
+    <textarea id="postContent" placeholder="Content"></textarea>
+    <input id="postLink" placeholder="Optional Link">
+    <input type="file" id="postImage">
+    <button id="publishBtn">Publish Blog</button>
+    <p id="uploadStatus"></p>
+  </section>
+
+  <!-- AIRDROP -->
+  <h2>🚀 Airdrop Post</h2>
+  <section>
+    <input id="airdropTitle" placeholder="Title">
+    <input id="airdropDescription" placeholder="Description">
+    <input id="airdropReward" placeholder="Reward (e.g $50 USDT)">
+    <input id="airdropLink" placeholder="Join Link">
+    <input id="airdropReferral" placeholder="Referral Link (optional)">
+    <input id="airdropEnd" type="datetime-local">
+    <input type="file" id="airdropImage">
+
+    <div class="toggle-row">
+      <label>🔥 Hot</label>
+      <input type="checkbox" id="isHot">
+    </div>
+
+    <div class="toggle-row">
+      <label>🆕 New</label>
+      <input type="checkbox" id="isNew">
+    </div>
+
+    <div class="toggle-row">
+      <label>📌 Featured</label>
+      <input type="checkbox" id="isFeatured">
+    </div>
+
+    <button id="publishAirdropBtn">Publish Airdrop</button>
+  </section>
+
+</div>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

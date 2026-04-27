@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn to Earn | Oga Dave Concepts</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Montserrat';
+  color: gold;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-box {
+  background: #111;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.stat-box span {
+  color: gold;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.hero h1 {
+  font-family: 'Montserrat';
+}
+
+.hero p {
+  color: #bbb;
+}
+
+/* LESSON CARD */
+.lesson {
+  max-width: 600px;
+  margin: auto;
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,215,0,0.2);
+}
+
+.lesson h2 {
+  color: gold;
+}
+
+.lesson p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: gold;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* QUIZ MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.option {
+  background: #222;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #333;
+}
+
+/* RESULT */
+.result {
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🎓 Learn & Earn</div>
+  <div class="stats">
+    <div class="stat-box">💰 <span id="coins">120</span></div>
+    <div class="stat-box">🔥 <span id="streak">3</span> days</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Earn Coins While You Learn</h1>
+  <p>Complete today's lesson and win rewards</p>
+</section>
+
+<!-- LESSON -->
+<div class="lesson">
+  <h2 id="lesson-title">What is Blockchain?</h2>
+  <p id="lesson-content">
+    Blockchain is a decentralized digital ledger that records transactions across multiple computers...
+  </p>
+
+  <button class="btn" onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<!-- QUIZ MODAL -->
+<div class="modal" id="quizModal">
+  <div class="modal-content" id="quizBox">
+    
+    <!-- Question -->
+    <h3 id="question">Loading...</h3>
+
+    <!-- Options -->
+    <div id="options"></div>
+
+    <button class="btn" onclick="nextQuestion()">Next</button>
+  </div>
+</div>
+
+<!-- ====== Footer Start ====== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
+    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <ul>
+        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
+        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
+        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+let quiz = [
+  {
+    question: "What is blockchain?",
+    options: ["A bank", "A decentralized ledger", "A game", "A website"],
+    answer: 1
+  },
+  {
+    question: "Blockchain is?",
+    options: ["Centralized", "Private only", "Decentralized", "Offline"],
+    answer: 2
+  },
+  {
+    question: "Which is a popular blockchain platform?",
+    options: ["Ethereum", "Google", "Facebook", "Amazon"],
+    answer: 0
+  }
+];
+
+let current = 0;
+let score = 0;
+
+function startQuiz() {
+  document.getElementById("quizModal").style.display = "flex";
+  loadQuestion();
+}
+
+function loadQuestion() {
+  const q = quiz[current];
+  document.getElementById("question").innerText = q.question;
+
+  const optionsBox = document.getElementById("options");
+  optionsBox.innerHTML = "";
+
+  q.options.forEach((opt, index) => {
+    const div = document.createElement("div");
+    div.classList.add("option");
+    div.innerText = opt;
+    div.onclick = () => selectAnswer(index);
+    optionsBox.appendChild(div);
+  });
+}
+
+function selectAnswer(index) {
+  if (index === quiz[current].answer) {
+    score++;
+  }
+}
+
+function nextQuestion() {
+  current++;
+  if (current < quiz.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const coinsEarned = score * 10;
+
+  document.getElementById("quizBox").innerHTML = `
+    <div class="result">
+      <h2>🎉 You earned ${coinsEarned} coins</h2>
+      <p>Your Score: ${score}/${quiz.length}</p>
+      <button class="btn" onclick="location.reload()">Done</button>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>

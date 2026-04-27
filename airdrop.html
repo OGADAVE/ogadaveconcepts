@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Airdrop | Oga Dave Concepts</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Discover the latest crypto airdrop opportunities. Join now to earn free tokens by completing simple tasks.">
+  <meta name="keywords" content="crypto airdrop, free tokens, earn crypto, Oga Dave Concepts">
+  <meta name="author" content="Oga Dave Concepts">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crypto Airdrop | Oga Dave Concepts">
+  <meta property="og:description" content="Discover the latest crypto airdrop opportunities. Join now to earn free tokens by completing simple tasks.">
+  <meta property="og:image" content="DEFAULT_IMAGE_URL">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ogadaveconcepts.com.ng/airdrop.html">
+
+  <link rel="canonical" href="https://www.ogadaveconcepts.com.ng/airdrop.html">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preload" href="images/ogadave3.jpg" as="image">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    section {
+      padding: 80px 20px;
+    }
+
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .gold { color: #d4af37; }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .gold-btn {
+      background: #d4af37;
+      color: #000;
+    }
+
+    .gold-btn:hover {
+      background: #b9972b;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a, #111);
+      padding-top: 120px;
+    }
+
+    .hero p {
+      color: #bbb;
+      margin-top: 10px;
+    }
+
+    .badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.badge.hot {
+  background: red;
+  color: #fff;
+}
+
+.badge.new {
+  background: green;
+  color: #fff;
+}
+
+.timer {
+  font-size: 13px;
+  margin: 10px 0;
+  color: #ffcc00;
+}
+
+.copy-btn {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid gold;
+  color: gold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: gold;
+  color: #000;
+}
+
+/* Featured Airdrop */
+.featured-airdrop {
+  border: 2px solid gold;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+}
+
+    /* AIRDROP */
+    .airdrop h1 {
+      color: gold;
+    }
+
+    .airdrop p {
+      color: #bbb;
+    }
+
+    .airdrop-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .airdrop-card {
+      background: #111;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    .airdrop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(255,215,0,0.25);
+    }
+
+    .airdrop-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .airdrop-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .airdrop-card p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .reward {
+      display: block;
+      margin: 10px 0;
+      color: gold;
+      font-weight: bold;
+    }
+
+    .airdrop-card .btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* LOADING SKELETON */
+    .skeleton {
+      height: 250px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, #111 25%, #1a1a1a 50%, #111 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* FOOTER */
+    .blog-footer {
+      background: #0b0b0b;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#home" class="logo-link">
+      <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
+      <span>OGA DAVE CONCEPTS</span>
+      </a>
+    </div>
+
+    <nav class="nav-links">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+  <a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a>
+  <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
+  <a href="airdrop.html" class="active"><i class="fas fa-gift"></i> Airdrop</a>
+</nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Get Free <span class="gold">Crypto Airdrop</span></h1>
+  <p>Join now and earn rewards by completing simple tasks.</p>
+  <a href="#airdrop" class="btn gold-btn">Explore Airdrops</a>
+</section>
+
+<!-- AIRDROP -->
+<section class="airdrop" id="airdrop">
+  <h1>🔥 Latest Airdrop Opportunities</h1>
+  <p>Pick any opportunity and start earning</p>
+
+  <div id="airdrop-container" class="airdrop-container">
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <h2>Don't Miss Out 🚀</h2>
+  <p>Join our WhatsApp community to get updates instantly</p>
+
+  <a href="https://whatsapp.com/channel/0029Vb7tUNcJUM2XXt419D2t" class="btn gold-btn">
+    <i class="fab fa-whatsapp"></i> Join Us on WhatsApp Now!
+  </a>
+</section>
+
+<!-- ====== Footer Start ====== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
+    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <ul>
+        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
+        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
+        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script type="module">
+
+  // Firebase configuration and initialization
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* ================= FIREBASE ================= */
+const firebaseConfig = {
+  apiKey: "AIzaSyCqkF3S1laiCck3naywl6Jq9WoeWkouFCM",
+  authDomain: "oga-dave-concepts.firebaseapp.com",
+  projectId: "oga-dave-concepts",
+  storageBucket: "oga-dave-concepts.firebasestorage.app",
+  messagingSenderId: "277897709083",
+  appId: "1:277897709083:web:46091bc6c047800c2b1abe"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const container = document.getElementById("airdrop-container");
+
+/* =========================
+   COUNTDOWN 
+========================= */
+function getCountdown(endDate) {
+  if (!endDate) return "";
+
+  const date = endDate.toDate ? endDate.toDate() : new Date(endDate);
+  const diff = date.getTime() - Date.now();
+
+  if (diff <= 0) return "⛔ Expired";
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+  return `⏳ ${days}d ${hours}h ${minutes}m`;
+}
+
+/* =========================
+   COPY REFERRAL
+========================= */
+function copyLink(link) {
+  navigator.clipboard.writeText(link)
+    .then(() => alert("Referral copied!"))
+    .catch(() => alert("Copy failed"));
+}
+window.copyLink = copyLink;
+
+/* =========================
+   CARD BUILDER 
+========================= */
+function createCard(data, featured = false) {
+  const card = document.createElement("div");
+  card.className = featured ? "featured-airdrop" : "airdrop-card";
+
+  const badge =
+    data.isHot ? `<span class="badge hot">🔥 HOT</span>` :
+    data.isNew ? `<span class="badge new">🆕 NEW</span>` : "";
+
+  const timer = data.endDate
+    ? `<div class="timer">${getCountdown(data.endDate)}</div>`
+    : "";
+
+  const referralBtn = data.referral
+    ? `<button class="copy-btn" onclick="copyLink('${data.referral}')">📋 Copy Referral</button>`
+    : "";
+
+  const joinBtn = data.link
+    ? `<a href="${data.link}" target="_blank" class="btn gold-btn">🚀 Join Airdrop</a>`
+    : "";
+
+  card.innerHTML = `
+    ${badge}
+    ${data.imageUrl ? `<img src="${data.imageUrl}" />` : ""}
+
+    <h3>${data.title || ""}</h3>
+    <p>${data.description || ""}</p>
+
+    ${data.reward ? `<span class="reward">💰 ${data.reward}</span>` : ""}
+    ${timer}
+
+    ${joinBtn}
+    ${referralBtn}
+  `;
+
+  return card;
+}
+
+/* =========================
+   LOAD AIRDROPS 
+========================= */
+async function loadAirdrops() {
+  try {
+    const q = query(
+      collection(db, "airdrops"),
+      orderBy("date", "desc"),
+      limit(30)
+    );
+
+    const snapshot = await getDocs(q);
+
+    container.innerHTML = "";
+
+    if (snapshot.empty) {
+      container.innerHTML = "<p>No airdrops available yet, check back later.</p>";
+      return;
+    }
+
+    let featuredUsed = false;
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+
+      // ✅ Only ONE featured (controlled from Firestore)
+      const isFeatured = data.isFeatured && !featuredUsed;
+
+      if (isFeatured) featuredUsed = true;
+
+      container.appendChild(createCard(data, isFeatured));
+    });
+
+  } catch (error) {
+    console.error("Airdrop Load Error:", error);
+    container.innerHTML = "<p>No airdrops available, check back later.</p>";
+  }
+}
+
+/* =========================
+   INIT
+========================= */
+loadAirdrops();
+
+// Optional auto-refresh every 60s
+setInterval(loadAirdrops, 60000);
+
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

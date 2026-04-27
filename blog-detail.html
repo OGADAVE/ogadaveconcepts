@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post | Oga Dave Concepts</title>
+
+  <!-- SEO -->
+<meta name="description" content="Read latest insights from Oga Dave Concepts blog. Crypto, tech and real estate updates.">
+<meta name="keywords" content="crypto, airdrop, tech, real estate, oga dave concepts">
+<meta name="author" content="Oga Dave Concepts">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="OGA DAVE BLOG">
+<meta property="og:description" content="Latest crypto, tech and real estate insights">
+<meta property="og:image" content="https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.ogadaveconcepts.com.ng/blog-detail.html">
+
+<link rel="canonical" href="https://www.ogadaveconcepts.com.ng/blog-detail.html">
+<link rel="icon" href="images/favicon.ico">
+<link rel="preload" href="images/ogadave3.jpg" as="image">
+
+  <!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+  <style>
+    /* MAIN */
+    .container {
+      max-width: 850px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #d4af37;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      font-size: 16px;
+      color: #333;
+      white-space: pre-line;
+    }
+
+    .source-link {
+      display: inline-block;
+      margin-top: 25px;
+      background: gold;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .source-link:hover {
+      background: #e6c200;
+    }
+
+    /* LOADING */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: #777;
+    }
+
+    /* ERROR */
+    .error {
+      text-align: center;
+      color: crimson;
+      padding: 40px;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#home" class="logo-link">
+      <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
+      <span>OGA DAVE CONCEPTS</span>
+      </a>
+    </div>
+
+    <nav class="nav-links">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+  <a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a>
+  <a href="blog-detail.html" class="active"><i class="fas fa-blog"></i> Blog</a>
+  <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
+</nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="container" id="blog-details">
+  <p class="loading">Loading post...</p>
+</div>
+
+<div style="margin-top:20px;">
+  <h3>Share this post</h3>
+
+  <button onclick="shareWhatsApp()" class="btn">WhatsApp</button>
+  <button onclick="shareFacebook()" class="btn">Facebook</button>
+  <button onclick="shareTwitter()" class="btn">Twitter</button>
+  <button onclick="shareTikTok()" class="btn">TikTok</button>
+  <button onclick="copyLink()" class="btn">Copy Link</button>
+</div>
+
+<!-- ====== Footer Start ====== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
+    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <ul>
+        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
+        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
+        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script type="module">
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* ================= FIREBASE ================= */
+const firebaseConfig = {
+  apiKey: "AIzaSyCqkF3S1laiCck3naywl6Jq9WoeWkouFCM",
+  authDomain: "oga-dave-concepts.firebaseapp.com",
+  projectId: "oga-dave-concepts",
+  storageBucket: "oga-dave-concepts.firebasestorage.app",
+  messagingSenderId: "277897709083",
+  appId: "1:277897709083:web:46091bc6c047800c2b1abe"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const container = document.getElementById("blog-details");
+
+/* =========================
+   HELPERS
+========================= */
+
+// Safe text (basic protection)
+function safeText(text) {
+  const div = document.createElement("div");
+  div.textContent = text || "";
+  return div.innerHTML;
+}
+
+// Safe date handler
+function formatDate(dateField) {
+  if (!dateField) return "";
+
+  try {
+    const date = dateField.toDate ? dateField.toDate() : new Date(dateField);
+    return date.toDateString();
+  } catch {
+    return "";
+  }
+}
+
+/* =========================
+   LOAD BLOG POST
+========================= */
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+async function loadPost() {
+  try {
+    if (!id) {
+      container.innerHTML = `<div class="error">Post ID missing.</div>`;
+      return;
+    }
+
+    const docRef = doc(db, "blogPosts", id);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+      container.innerHTML = `<div class="error">Post not found.</div>`;
+      return;
+    }
+
+    const post = docSnap.data();
+
+    const image = post.imageUrl || "images/default-blog.jpg";
+    const title = safeText(post.title);
+    const content = safeText(post.content || post.description);
+    const date = formatDate(post.date);
+
+    const linkBtn = post.link
+      ? `<a class="source-link" href="${post.link}" target="_blank">Read Source</a>`
+      : "";
+
+    container.innerHTML = `
+      <img src="${image}" class="img">
+
+      <h1>${title}</h1>
+
+      <div class="date">${date}</div>
+
+      <div class="content">${content}</div>
+
+      ${linkBtn}
+    `;
+
+  } catch (err) {
+    console.error("Blog Load Error:", err);
+    container.innerHTML = `<div class="error">Failed to load post.</div>`;
+  }
+}
+
+loadPost();
+
+/* =========================
+   SHARE FUNCTIONS
+========================= */
+const url = window.location.href;
+
+function shareWhatsApp(){
+  window.open(`https://wa.me/?text=${encodeURIComponent(url)}`);
+}
+
+function shareFacebook(){
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+}
+
+function shareTwitter(){
+  window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`);
+}
+
+function shareTikTok(){
+  window.open(`https://www.tiktok.com/share?url=${encodeURIComponent(url)}`);
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(url);
+  alert("Link copied!");
+}
+
+// Make functions global
+window.shareWhatsApp = shareWhatsApp;
+window.shareFacebook = shareFacebook;
+window.shareTwitter = shareTwitter;
+window.shareTikTok = shareTikTok;
+window.copyLink = copyLink;
+
+/* =========================
+   FOOTER YEAR
+========================= */
+document.getElementById("year").textContent = new Date().getFullYear();

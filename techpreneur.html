@@ -114,22 +114,34 @@
 <!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="nav-container">
+
     <div class="logo">
       <a href="#home" class="logo-link">
-      <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
-      <span>OGA DAVE CONCEPTS</span>
+        <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
+        <span>OGA DAVE CONCEPTS</span>
       </a>
     </div>
 
-    <nav class="nav-links">
-  <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-  <a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a>
-  <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
-  <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
-</nav>
+    <!-- MENU BUTTON -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
+      <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+      <a href="index.html#services" class="active"><i class="fas fa-briefcase"></i> Services</a>
+      <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
+      <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
+    </nav>
+
   </div>
 </header>
+
+<!-- BACKDROP -->
+<div id="navBackdrop" class="nav-backdrop"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -284,10 +296,10 @@
       <h3>Quick Links</h3>
   <ul>
     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
-    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
-    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    <li><a href="index.html#about"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a></li>
+    <li><a href="index.html#blog"><i class="fas fa-blog"></i> Blog</a></li>
+    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
   </ul>
     </div>
 
@@ -318,6 +330,49 @@
 </footer>
 
 <script>
+  // Mobile menu toggle
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+const backdrop = document.getElementById("navBackdrop");
+
+// OPEN MENU
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+backdrop.classList.toggle("active");
+});
+
+// CLOSE FUNCTION
+function closeMenu() {
+  nav.classList.remove("active");
+  backdrop.classList.remove("active");
+}
+
+// CLICK BACKDROP = CLOSE
+backdrop.addEventListener("click", closeMenu);
+
+// AUTO CLOSE ON LINK CLICK
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+// ==========================
+// SWIPE TO CLOSE (MOBILE)
+// ==========================
+let startX = 0;
+
+nav.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+nav.addEventListener("touchmove", (e) => {
+  let currentX = e.touches[0].clientX;
+
+  // swipe right → close
+  if (currentX - startX > 80) {
+    closeMenu();
+  }
+});
+
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 

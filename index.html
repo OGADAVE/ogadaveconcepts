@@ -59,22 +59,34 @@
     <!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="nav-container">
+
     <div class="logo">
       <a href="#home" class="logo-link">
-      <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
-      <span>OGA DAVE CONCEPTS</span>
+        <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
+        <span>OGA DAVE CONCEPTS</span>
       </a>
     </div>
 
-    <nav class="nav-links">
-  <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-  <a href="#about"><i class="fas fa-user"></i> About</a>
-  <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
-  <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
-  <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
-</nav>
+    <!-- MENU BUTTON -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
+      <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
+    </nav>
+
   </div>
 </header>
+
+<!-- BACKDROP -->
+<div id="navBackdrop" class="nav-backdrop"></div>
 
   <!-- ===== HERO SECTION ===== -->
 <section id="home" class="hero">
@@ -90,7 +102,7 @@
 
       <div class="hero-buttons">
       <a href="https://wa.me/2348160693873" class="btn gold-btn" target="_blank">
-  Buy Crypto / Build Website / Invest in Property
+  Buy & Sell Crypto / Build Websites & Apps / Invest in Properties
 </a>
 
 <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20want%20to%20work%20with%20you" 

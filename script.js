@@ -109,4 +109,47 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
+// Mobile menu toggle
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+const backdrop = document.getElementById("navBackdrop");
+
+// OPEN MENU
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+backdrop.classList.toggle("active");
+});
+
+// CLOSE FUNCTION
+function closeMenu() {
+  nav.classList.remove("active");
+  backdrop.classList.remove("active");
+}
+
+// CLICK BACKDROP = CLOSE
+backdrop.addEventListener("click", closeMenu);
+
+// AUTO CLOSE ON LINK CLICK
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+// ==========================
+// SWIPE TO CLOSE (MOBILE)
+// ==========================
+let startX = 0;
+
+nav.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+nav.addEventListener("touchmove", (e) => {
+  let currentX = e.touches[0].clientX;
+
+  // swipe right → close
+  if (currentX - startX > 80) {
+    closeMenu();
+  }
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();

@@ -3,432 +3,609 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OGA DAVE CONCEPTS | Building Markets, Tech, and Real Estate Excellence</title>
+  <title>OGA DAVE CONCEPTS | Crypto · Tech · Real Estate — Abuja, Nigeria</title>
+  <meta name="description" content="OGA DAVE CONCEPTS — Your digital partner from blockchain to brickwork. Expert crypto trading, web development, and premium real estate in Abuja, Nigeria.">
+  <meta name="keywords" content="Crypto Nigeria, Buy Bitcoin Nigeria, Web Development Abuja, Real Estate Abuja, Oga Dave Concepts, Techpreneur Nigeria">
+  <meta name="author" content="OGA DAVE CONCEPTS">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="OGA DAVE CONCEPTS | Crypto · Tech · Real Estate">
+  <meta property="og:description" content="Your digital partner from blockchain to brickwork. Crypto, Web Dev & Real Estate — Abuja, Nigeria.">
+  <meta property="og:image" content="https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ogadaveconcepts.com.ng">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OGA DAVE CONCEPTS">
+  <meta name="twitter:description" content="Your digital partner from blockchain to brickwork.">
+  <meta name="twitter:image" content="https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://www.ogadaveconcepts.com.ng/">
 
-  <!-- SEO -->
-   <meta name="description" content="OGA DAVE CONCEPTS - Expert in Crypto, Tech, and Real Estate. We build digital platforms, offer crypto services, and provide premium property solutions in Nigeria.">
-   <meta name="keywords" content="Crypto Nigeria, Buy Bitcoin Nigeria, Web Development Nigeria, Real Estate Abuja, Oga Dave Concepts">
-   <meta name="author" content="OGA DAVE CONCEPTS">
-   
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="robots" content="index, follow">
-   
-   <meta property="og:title" content="OGA DAVE CONCEPTS">
-   <meta property="og:description" content="Crypto | Tech | Real Estate Solutions">
-    <meta property="og:image" content="https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg">   <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.ogadaveconcepts.com.ng">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OGA DAVE CONCEPTS">
-    <meta name="twitter:description" content="Crypto | Tech | Real Estate Solutions">
-    <meta name="twitter:image" content="https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg">
-
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://www.ogadaveconcepts.com.ng/">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "OGA DAVE CONCEPTS",
     "url": "https://www.ogadaveconcepts.com.ng",
-    "logo": "https://www.ogadaveconcepts.com.ng/images/ogadave3.jpg",
+    "logo": "https://www.ogadaveconcepts.com.ng/images/logo.jpg",
+    "description": "Expert in Crypto trading, Web Development, and Real Estate in Abuja, Nigeria.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Abuja", "addressCountry": "NG" },
     "sameAs": [
       "https://www.facebook.com/share/1B7sF6r8cM/",
       "https://www.instagram.com/ogadaveconcepts/",
-      "https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/obuo-david-7a2a88199",
       "https://x.com/virtuousdave32",
       "https://www.tiktok.com/@oga_dave_concepts"
     ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+2348160693873",
-      "contactType": "Customer Service",
-      "email": "ogadaveconcepts@gmail.com",
-      "areaServed": "NG"  
-    }
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+2348160693873", "contactType": "Customer Service", "email": "ogadaveconcepts@gmail.com", "areaServed": "NG" }
   }
   </script>
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-<header class="navbar">
-  <div class="nav-container">
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">ODC</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
 
-    <div class="logo">
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
       <a href="#home" class="logo-link">
         <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
         <span>OGA DAVE CONCEPTS</span>
       </a>
-    </div>
-
-    <!-- MENU BUTTON -->
-    <div class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
-
-    <!-- NAV LINKS -->
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-      <a href="#about"><i class="fas fa-user"></i> About</a>
-      <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
-      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-      <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
-      <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
-    </nav>
-
-  </div>
-</header>
-
-<!-- BACKDROP -->
-<div id="navBackdrop" class="nav-backdrop"></div>
-
-  <!-- ===== HERO SECTION ===== -->
-<section id="home" class="hero">
-  <div class="hero-container">
-    <div class="hero-text">
-      <h1>Welcome to <span>OGA DAVE CONCEPTS</span></h1>
-      <h2 class="animated-text">
-        <span>Entrepreneur</span>
-        <span>Realtor</span>
-        <span>Tech Founder</span>
-      </h2>
-      <p class="tagline">Building Markets, Tech, and Real Estate Excellence.</p>
-
-      <div class="hero-buttons">
-      <a href="https://wa.me/2348160693873" class="btn gold-btn" target="_blank">
-  Buy & Sell Crypto / Build Websites & Apps / Invest in Properties
-</a>
-
-<a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20want%20to%20work%20with%20you" 
-   target="_blank" 
-   class="btn outline-btn">
-  Work With Me
-</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#portfolio" class="nav-item">Projects</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="blog-detail.html" class="nav-item">Blog</a>
+        <a href="airdrop.html" class="nav-item">Airdrop</a>
+      </nav>
+      <div class="nav-right">
+        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20want%20to%20work%20with%20you" target="_blank" class="nav-cta">
+          <i class="fab fa-whatsapp"></i> Let's Talk
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    <div class="hero-photo">
-      <img src="images/ogadave3.jpg" alt="Oga Dave - Founder of OGA DAVE CONCEPTS" loading="lazy">
     </div>
-  </div>
-</section>
+  </header>
+  <div id="navBackdrop" class="nav-backdrop"></div>
 
-<!-- ===== ABOUT SECTION ===== -->
-<section id="about" class="about">
-  <div class="container">
-    <div class="about-image">
-      <img src="images/ogadave4.jpg" alt="Oga Dave Concepts Founder" loading="lazy">
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
     </div>
 
-    <div class="about-text">
-      <h2>About <span>Me</span></h2>
-      <p>
-        I’m <strong>Obuo David James (popularly known as OGA DAVE)</strong>, a passionate entrepreneur driven by innovation and impact.
-        Through <strong>OGA DAVE CONCEPTS</strong>, I’ve built ventures across Technology,
-        Cryptocurrency, and Real Estate — empowering individuals and businesses to grow in the modern market.
-      </p>
-      <p>
-        As a <strong>Cryptopreneur</strong>, I specialize in Buying and Selling of Cryptocurrencies & Giftcards, crypto trading, investment coaching & mentorship, Account Management,
-        and general consultation. As a <strong>Techpreneur</strong>, I help brands go digital through
-        Web development, graphics design, SEO, social media marketing and content strategy. And in <strong>Real Estate</strong>,
-        I focus on property sales, estate management, development and consultancy.
-      </p>
-
-      <a href="#services" class="btn gold-btn">Explore My Services</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES SECTION ===== -->
-<section id="services" class="services">
-  <div class="section-title">
-    <h2>What we <span>Do</span></h2>
-    <p>Bridging innovation, finance, and real estate — one concept at a time.</p>
-  </div>
-
-  <div class="services-container">
-    <!-- CRYPTOPRENEUR -->
-    <div class="service-card">
-      <div class="icon">
-        <i class="fas fa-coins"></i>
+    <div class="hero-container">
+      <!-- LEFT -->
+      <div class="hero-text" data-reveal>
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Entrepreneur · Realtor · Tech Founder
+        </div>
+        <h1 class="hero-title">
+          Your Digital Partner<br>
+          <em>From Blockchain</em><br>
+          <span class="hero-title-accent">to Brickwork.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Building real wealth across Crypto, Technology,<br class="desktop-br">
+          and Real Estate — out of Abuja, Nigeria.
+        </p>
+        <div class="hero-pills">
+          <span class="pill"><i class="fas fa-coins"></i> Crypto Trading</span>
+          <span class="pill"><i class="fas fa-laptop-code"></i> Web & Apps</span>
+          <span class="pill"><i class="fas fa-building"></i> Real Estate</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-gold">Explore Services <i class="fas fa-arrow-right"></i></a>
+          <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20want%20to%20work%20with%20you" target="_blank" class="btn btn-outline">Work With Me</a>
+        </div>
       </div>
-      <h3>CRYPTOPRENEUR</h3>
-      <p>
-        We help you securely Buy, Sell and Swap Cryptocurrencies. We also empower individuals to build wealth through crypto trading, investment education,
-        and blockchain consulting — offering trusted insights in an evolving digital economy.
-      </p>
-      <a href="cryptopreneur.html" class="btn gold-btn">Buy & Sell Crypto</a>
-    </div>
 
-    <!-- TECHPRENEUR -->
-    <div class="service-card">
-      <div class="icon">
-        <i class="fas fa-laptop-code"></i>
-      </div>
-      <h3>TECHPRENEUR</h3>
-      <p>
-        From websites to mobile apps, We build powerful digital products that drive business growth.
-        Our focus: simplicity, speed, professionalism and global reach through technology.
-      </p>
-      <a href="techpreneur.html" class="btn gold-btn">Build Your Website Now</a>
-    </div>
-
-    <!-- REAL ESTATE -->
-    <div class="service-card">
-      <div class="icon">
-        <i class="fas fa-building"></i>
-      </div>
-      <h3>REAL ESTATE</h3>
-      <p>
-        As a Realtor and Developers, We connect clients to high-value properties and investment
-        opportunities — combining legitimacy & transparency, class & Luxury, and profitable returns.
-      </p>
-      <a href="real-estate.html" class="btn gold-btn">Buy your Property Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PORTFOLIO SECTION ===== -->
-<section id="portfolio" class="portfolio">
-  <div class="section-title">
-    <h2>Our <span>Projects</span></h2>
-    <p>A few highlights from our journey across tech, real estate, and innovation.</p>
-  </div>
-
-  <div class="portfolio-container">
-    <!-- PROJECT 1 -->
-     <div class="portfolio-card">
-      <img src="images/midahairstore.png" alt="Mida Hair Store">
-      <div class="portfolio-info">
-        <h3>Mida Hair Store</h3>
-        <p>A modern e-commerce platform for selling premium hair care products and services.</p>
-        <a href="https://www.midahairstore.com.ng" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+      <!-- RIGHT -->
+      <div class="hero-visual" data-reveal-delay>
+        <div class="hero-photo-frame">
+          <div class="frame-ring frame-ring-1"></div>
+          <div class="frame-ring frame-ring-2"></div>
+          <img src="images/ogadave3.jpg" alt="Obuo David James — Founder, OGA DAVE CONCEPTS" loading="eager">
+          <div class="hero-badge hero-badge-1"><i class="fas fa-coins"></i><span>Cryptopreneur</span></div>
+          <div class="hero-badge hero-badge-2"><i class="fas fa-laptop-code"></i><span>Techpreneur</span></div>
+          <div class="hero-badge hero-badge-3"><i class="fas fa-building"></i><span>Realtor</span></div>
+        </div>
       </div>
     </div>
 
-    <!-- PROJECT 2 -->
-    <div class="portfolio-card">
-      <img src="images/lustre.jpeg" alt="Interior Design Project" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Interior Design Project</h3>
-        <p>Transforming spaces with innovative design solutions and premium materials.</p>
-        <a href="https://www.lustreinteriorsltd.com" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="26">0</span><span class="stat-suffix">+</span>
+        <p>Websites Built</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="58">0</span><span class="stat-suffix">+</span>
+        <p>Brands Scaled</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+        <p>Years Active</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+        <p>Client Focus</p>
       </div>
     </div>
+  </section>
 
-    <!-- PROJECT 3 -->
-    <div class="portfolio-card">
-      <img src="images/monayz-logo.png" alt="Monayz Food Processing" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Monayz Food Processing</h3>
-        <p>Corporate website for Monayz — showcasing agro-processing excellence and product innovation.</p>
-        <a href="https://www.monayz.com.ng" target="_blank" rel="noopener noreferrer" class="btn gold-btn">Visit Site</a>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-image-wrap" data-reveal="left">
+        <div class="about-img-bg"></div>
+        <img src="images/ogadave4.jpg" alt="Obuo David James — OGA DAVE" loading="lazy">
+        <div class="about-img-badge">
+          <i class="fas fa-award"></i>
+          <div><strong>Verified</strong><span>Multi-Industry Expert</span></div>
+        </div>
+      </div>
+      <div class="about-text" data-reveal="right">
+        <p class="section-eyebrow">About OGA DAVE</p>
+        <h2 class="section-heading">The Mind <em>Behind</em><br>the Concepts.</h2>
+        <p>I'm <strong>Obuo David James</strong> — popularly known as <strong>OGA DAVE</strong>. A passionate entrepreneur driven by innovation and real-world impact. Through <strong>OGA DAVE CONCEPTS</strong>, I've built ventures across Technology, Cryptocurrency, and Real Estate, empowering individuals and businesses to grow in the modern market.</p>
+        <p>As a <strong>Cryptopreneur</strong>, I specialize in crypto trading, buying & selling digital assets, investment coaching, and blockchain consulting. As a <strong>Techpreneur</strong>, I help brands go digital through web development, UI/UX, SEO, and content strategy. In <strong>Real Estate</strong>, I focus on property sales, estate management, development and consultancy.</p>
+        <div class="about-tags">
+          <span>Crypto Trading</span>
+          <span>Web Development</span>
+          <span>Real Estate</span>
+          <span>Investment Coaching</span>
+          <span>Brand Strategy</span>
+        </div>
+        <a href="#services" class="btn btn-gold">Explore My Services <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
+  </section>
 
-    <!-- PROJECT 4 -->
-    <div class="portfolio-card">
-      <img src="images/soundhope.jpeg" alt="SoundHope School" loading="lazy">
-      <div class="portfolio-info">
-        <h3>SoundHope School</h3>
-        <p>Educational website highlighting SoundHope School’s programs, admissions, and academic excellence.</p>
-        <a href="https://www.soundhopeschool.com.ng" target="_blank" rel="noopener noreferrer" class="btn gold-btn">Visit Site</a>
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">What We Do</p>
+      <h2 class="section-heading">Three Pillars.<br><em>One Vision.</em></h2>
+      <p class="section-subtext">Bridging innovation, finance, and real estate — one concept at a time.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-reveal data-delay="0">
+        <div class="service-number">01</div>
+        <div class="service-icon"><i class="fas fa-coins"></i></div>
+        <h3>Cryptopreneur</h3>
+        <p>We help you securely buy, sell and swap cryptocurrencies. We empower individuals to build wealth through crypto trading, investment education, and blockchain consulting.</p>
+        <ul class="service-list">
+          <li><i class="fas fa-check"></i> Buy & Sell Crypto / Giftcards</li>
+          <li><i class="fas fa-check"></i> Trading & Investment Coaching</li>
+          <li><i class="fas fa-check"></i> Account Management</li>
+          <li><i class="fas fa-check"></i> Blockchain Consultation</li>
+        </ul>
+        <a href="cryptopreneur.html" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card service-card--featured" data-reveal data-delay="150">
+        <div class="service-featured-tag">Most Popular</div>
+        <div class="service-number">02</div>
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Techpreneur</h3>
+        <p>From websites to mobile apps, we build powerful digital products that drive real business growth. Our focus: simplicity, speed, professionalism, and global reach.</p>
+        <ul class="service-list">
+          <li><i class="fas fa-check"></i> Website & App Development</li>
+          <li><i class="fas fa-check"></i> UI/UX & Graphics Design</li>
+          <li><i class="fas fa-check"></i> SEO & Digital Marketing</li>
+          <li><i class="fas fa-check"></i> Social Media Strategy</li>
+        </ul>
+        <a href="techpreneur.html" class="service-link">Build Your Product <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-reveal data-delay="300">
+        <div class="service-number">03</div>
+        <div class="service-icon"><i class="fas fa-building"></i></div>
+        <h3>Real Estate</h3>
+        <p>As a Realtor and Developer, we connect clients to high-value properties and investment opportunities — combining legitimacy, transparency, class, and profitable returns.</p>
+        <ul class="service-list">
+          <li><i class="fas fa-check"></i> Property Sales & Acquisition</li>
+          <li><i class="fas fa-check"></i> Estate Management</li>
+          <li><i class="fas fa-check"></i> Investment Consultancy</li>
+          <li><i class="fas fa-check"></i> Property Development</li>
+        </ul>
+        <a href="real-estate.html" class="service-link">Find Property <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
+  </section>
 
-    <!-- PROJECT 5 -->
-    <div class="portfolio-card">
-      <img src="images/realityrealtor.jpg" alt="Reality Realtor" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Reality Realtor — Real Estate Brand</h3>
-        <p>Helping clients buy, sell, and manage properties with transparency and class.</p>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Our Work</p>
+      <h2 class="section-heading">Projects That <em>Speak</em><br>for Themselves.</h2>
+      <p class="section-subtext">A curated selection of work across tech, real estate, and innovation.</p>
+    </div>
+    <div class="portfolio-filter" data-reveal>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="tech">Tech</button>
+      <button class="filter-btn" data-filter="crypto">Crypto</button>
+      <button class="filter-btn" data-filter="realestate">Real Estate</button>
+    </div>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/digijewel.jpg" alt="DigiJewel" loading="lazy">
+          <div class="portfolio-overlay"><a href="https://www.digijewelrystore.com" target="_blank" rel="noopener" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">E-commerce · Tech</span>
+          <h3>Digi Jewelry Store</h3>
+          <p>Modern e-commerce platform for premium wristwatches.</p>
+          <a href="https://www.digijewelrystore.com" target="_blank" rel="noopener" class="portfolio-cta">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/midahairstore.png" alt="Mida Hair Store" loading="lazy">
+          <div class="portfolio-overlay"><a href="https://www.midahairstore.com.ng" target="_blank" rel="noopener" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">E-Commerce · Tech</span>
+          <h3>Mida Hair Store</h3>
+          <p>Modern e-commerce platform for premium hair care products.</p>
+          <a href="https://www.midahairstore.com.ng" target="_blank" rel="noopener" class="portfolio-cta">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/lustre.jpeg" alt="Lustre Interiors" loading="lazy">
+          <div class="portfolio-overlay"><a href="https://www.lustreinteriorsltd.com" target="_blank" rel="noopener" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Interior Design · Tech</span>
+          <h3>Lustre Interiors</h3>
+          <p>Transforming spaces with innovative design solutions.</p>
+          <a href="https://www.lustreinteriorsltd.com" target="_blank" rel="noopener" class="portfolio-cta">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/monayz-logo.png" alt="Monayz Food Processing" loading="lazy">
+          <div class="portfolio-overlay"><a href="https://www.monayz.com.ng" target="_blank" rel="noopener" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Corporate · Tech</span>
+          <h3>Monayz Food Processing</h3>
+          <p>Corporate website showcasing agro-processing excellence.</p>
+          <a href="https://www.monayz.com.ng" target="_blank" rel="noopener" class="portfolio-cta">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/soundhope.jpeg" alt="SoundHope School" loading="lazy">
+          <div class="portfolio-overlay"><a href="https://www.soundhopeschool.com.ng" target="_blank" rel="noopener" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Education · Tech</span>
+          <h3>SoundHope School</h3>
+          <p>Educational platform with modern UI and programs.</p>
+          <a href="https://www.soundhopeschool.com.ng" target="_blank" rel="noopener" class="portfolio-cta">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card portfolio-card--soon" data-category="realestate" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/realityrealtor.jpg" alt="Reality Realtor" loading="lazy">
+          <div class="portfolio-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Real Estate</span>
+          <h3>Reality Realtor</h3>
+          <p>Property buying, selling and management platform.</p>
+          <span class="portfolio-cta muted">In Development</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card portfolio-card--soon" data-category="tech" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/servana.jpg" alt="Servana Platform" loading="lazy">
+          <div class="portfolio-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Service Marketplace · Tech</span>
+          <h3>Servana Platform</h3>
+          <p>Connecting clients with local service providers.</p>
+          <span class="portfolio-cta muted">In Development</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card portfolio-card--soon" data-category="crypto" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/cravings.png" alt="Cravings Exchange" loading="lazy">
+          <div class="portfolio-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Crypto · Fintech</span>
+          <h3>Cravings Exchange</h3>
+          <p>Secure exchange for crypto buying, selling and swaps.</p>
+          <span class="portfolio-cta muted">In Development</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card portfolio-card--soon" data-category="realestate" data-reveal>
+        <div class="portfolio-img">
+          <img src="images/cyndy-logo.JPG" alt="Cyndy Homes" loading="lazy">
+          <div class="portfolio-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Real Estate · Tech</span>
+          <h3>Cyndy Homes</h3>
+          <p>Property listings, virtual tours and transactions.</p>
+          <span class="portfolio-cta muted">In Development</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- PROJECT 6 -->
-     <div class="portfolio-card">
-      <img src="images/servana.jpg" alt="Servana Platform" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Servana — Service Marketplace</h3>
-        <p>A full web and mobile platform connecting clients with local service providers.</p>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Social Proof</p>
+      <h2 class="section-heading">Clients Don't Lie.<br><em>Results Do Too.</em></h2>
+    </div>
+    <div class="testimonials-track-wrapper">
+      <div class="testimonials-track">
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Oga Dave Concepts delivered our school website ahead of schedule — sleek, functional, and fully responsive. The team exceeded every expectation. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-school"></i></div>
+            <div><strong>SoundHope School</strong><span>Educational Institution, Abuja</span></div>
+          </div>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Our brand visibility doubled after working with Oga Dave on the Monayz website. He understands business, not just design. A true techpreneur who delivers real results."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-industry"></i></div>
+            <div><strong>Monayz Foods</strong><span>Agro-Processing Company</span></div>
+          </div>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Professional, creative, and deeply passionate. From crypto training to real estate strategy, Oga Dave knows his stuff across every industry he touches."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
+            <div><strong>Private Client</strong><span>Investment & Tech Services</span></div>
+          </div>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
       </div>
     </div>
-
-    <!-- PROJECT 7 -->
-    <div class="portfolio-card">
-      <img src="images/cravings.png" alt="Cravings Exchange" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Cravings Exchange — Crypto Trading Platform</h3>
-        <p>A secure and user-friendly exchange for crypto buying, selling, and swaps.</p>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+    <div class="partners-row" data-reveal>
+      <p class="partners-label">Trusted by</p>
+      <div class="partners-logos">
+        <img src="images/monayz-logo.png" alt="Monayz" loading="lazy">
+        <img src="images/soundhope.jpeg" alt="SoundHope School" loading="lazy">
+        <img src="images/servana.jpg" alt="Servana" loading="lazy">
+        <img src="images/realityrealtor.jpg" alt="Reality Realtor" loading="lazy">
       </div>
     </div>
+  </section>
 
-    <!-- PROJECT 8 -->
-    <div class="portfolio-card">
-      <img src="images/cyndy-logo.JPG" alt="Cyndy Homes" loading="lazy">
-      <div class="portfolio-info">
-        <h3>Cyndy Homes — Real Estate Platform</h3>
-        <p>A comprehensive platform for property listings, virtual tours, and seamless transactions.</p>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn gold-btn">View Project</a>
+  <!-- BLOG -->
+  <section id="blog" class="blog">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Insights</p>
+      <h2 class="section-heading">Latest from<br><em>OGA DAVE.</em></h2>
+      <p class="section-subtext">Crypto insights, tech trends, and real estate intelligence — straight from the field.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card" data-reveal>
+        <div class="blog-img">
+          <img src="images/ogadave3.jpg" alt="Crypto article" loading="lazy">
+          <span class="blog-category">Crypto</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">May 2025</span>
+          <h3>How to Safely Buy & Sell Crypto in Nigeria in 2025</h3>
+          <p>Everything you need to know about peer-to-peer trading, trusted platforms, and avoiding scams in the Nigerian crypto market.</p>
+          <a href="blog-detail.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card" data-reveal>
+        <div class="blog-img">
+          <img src="images/monayz-logo.png" alt="Tech article" loading="lazy">
+          <span class="blog-category">Tech</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">April 2025</span>
+          <h3>Why Every Nigerian Business Needs a Website in 2025</h3>
+          <p>Your customers are online. Breaking down the ROI of professional web presence for Nigerian SMEs and startups.</p>
+          <a href="blog-detail.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card" data-reveal>
+        <div class="blog-img">
+          <img src="images/realityrealtor.jpg" alt="Real Estate article" loading="lazy">
+          <span class="blog-category">Real Estate</span>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">March 2025</span>
+          <h3>Top 5 Real Estate Investment Hotspots in Abuja Right Now</h3>
+          <p>From Gwarinpa to Maitama — where smart investors are putting their money in Abuja's property market.</p>
+          <a href="blog-detail.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-info" data-reveal="left">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-heading">Let's Build<br><em>Something</em><br>Great Together.</h2>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><strong>Location</strong><span>Abuja, Nigeria</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div><strong>Phone / WhatsApp</strong><span>+234 816 0693 873</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div><strong>Email</strong><span>ogadaveconcepts@gmail.com</span></div>
+          </div>
+        </div>
+        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20am%20interested%20in%20your%20services" target="_blank" class="whatsapp-cta">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp — Fastest Response
+        </a>
+        <div class="contact-social">
+          <a href="https://www.facebook.com/share/1B7sF6r8cM/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ogadaveconcepts/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/obuo-david-7a2a88199" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/virtuousdave32" target="_blank" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.tiktok.com/@oga_dave_concepts" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap" data-reveal="right">
+        <form action="https://formspree.io/f/xreovobz" method="POST" class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Obuo David" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">I'm interested in</label>
+            <select id="subject" name="subject">
+              <option value="">Select a service...</option>
+              <option value="Crypto Services">Crypto Services</option>
+              <option value="Website Development">Website Development</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold form-submit">
+            <span class="btn-text">Send Message <i class="fas fa-paper-plane"></i></span>
+            <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+          </button>
+          <div id="form-status" class="form-status"></div>
+        </form>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS / PARTNERS SECTION ===== -->
-<section id="testimonials" class="testimonials">
-  <div class="section-title">
-    <h2>Testimonials & <span>Partners</span></h2>
-    <p>What clients and collaborators say about working with OGA DAVE CONCEPTS.</p>
-  </div>
-
-  <div class="testimonials-container">
-    <!-- Testimonial 1 -->
-    <div class="testimonial-card">
-      <p>“Oga Dave Concepts delivered our school website ahead of schedule — sleek, functional, and responsive. Highly recommended!”</p>
-      <h4>- SoundHope School</h4>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS">
+          <span>OGA DAVE CONCEPTS</span>
+        </div>
+        <p>Your digital partner from blockchain to brickwork. Building real wealth across Crypto, Tech, and Real Estate — out of Abuja, Nigeria.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/share/1B7sF6r8cM/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ogadaveconcepts/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/obuo-david-7a2a88199" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/virtuousdave32" target="_blank" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.tiktok.com/@oga_dave_concepts" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="cryptopreneur.html">Cryptopreneur</a></li>
+            <li><a href="techpreneur.html">Techpreneur</a></li>
+            <li><a href="real-estate.html">Real Estate</a></li>
+            <li><a href="blog-detail.html">Get Insights</a></li>
+            <li><a href="airdrop.html">Airdrop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="blog-detail.html">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+            <li><i class="fas fa-phone"></i> +234 816 0693 873</li>
+            <li><i class="fas fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <!-- Testimonial 2 -->
-    <div class="testimonial-card">
-      <p>“Our brand visibility doubled after working with Oga Dave on Monayz Food Processing’s site. A true techpreneur.”</p>
-      <h4>- Monayz Foods</h4>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+      <p>Built with passion in Abuja, Nigeria 🇳🇬</p>
     </div>
+  </footer>
 
-    <!-- Testimonial 3 -->
-    <div class="testimonial-card">
-      <p>“Professional, creative, and passionate — from crypto training to real estate strategy, he knows his stuff.”</p>
-      <h4>- Client Review</h4>
-    </div>
-  </div>
-
-  <div class="partners">
-    <img src="images/servana.jpg" alt="Servana Logo">
-    <img src="images/realityrealtor.jpg" alt="Reality Realtor Logo">
-    <img src="images/monayz-logo.png" alt="Monayz Logo">
-    <img src="images/soundhope.jpeg" alt="SoundHope Logo">
-  </div>
-</section>
-
-<!-- ===== BLOG / UPDATES SECTION ===== -->
-<section id="blog" class="blog">
-  <div class="section-title">
-    <h2>Latest <span>Updates</span></h2>
-    <p>Insights, news, and behind-the-scenes moments from my ventures.</p>
-  </div>
-
-  <div id="blog-container" class="blog-container">
-    <!-- Blog posts will be dynamically loaded here -->
-     <p class="loading">Loading latest updates...</p>
-  </div>
-</section>
-
-<!-- Blog Script -->
-<script type="module" src="scripts/blog.js"></script>
-
-<!-- ✅ CONTACT SECTION -->
-<section id="contact" class="contact-section">
-  <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
-  <p>We’d love to hear from you! Send us a message and we’ll get back to you shortly.</p>
-
-  <div class="contact-container">
-
-    <!-- WhatsApp Button -->
-    <div class="whatsapp-contact">
-      <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20am%20interested%20in%20your%20services" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i> Send us a message on WhatsApp
-      </a>
-    </div>
-
-    <!-- Email Form -->
-<form 
-  action="https://formspree.io/f/xreovobz" 
-  method="POST" 
-  class="contact-form"
->
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Your Name" required />
-  </div>
-
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Your Email" required />
-  </div>
-
-  <div class="form-group">
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-  </div>
-
-  <button type="submit">
-    <i class="fas fa-paper-plane"></i> Send Message
-  </button>
-</form>
-
-<p id="form-success" style="display:none; color: gold; margin-top:10px;">
-  ✅ Message sent successfully!
-</p>  
-
-</div>
-</section>
-
-<!-- Floating Action Button -->
-<div class="floating-btn">
-  <a href="https://wa.me/2348160693873" class="floating-whatsapp" target="_blank">
+  <a href="https://wa.me/2348160693873" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat with us</span>
   </a>
-</div>
-
-<!-- ====== Footer Start ====== -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>About Us</h3>
-      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
-    </div>
-
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
-    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
-    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <ul>
-        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
-        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
-        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Follow Us</h3>
-      <div class="social-links">
-        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
-  </div>
-</footer>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
   <script src="script.js"></script>
 </body>

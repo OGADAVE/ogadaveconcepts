@@ -3,378 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Development, social media management | Oga Dave Concepts</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Professional web development, mobile apps, and digital solutions in Nigeria. OGA DAVE CONCEPTS builds high-performing digital products.">
-  <meta name="keywords" content="Web Development Nigeria, App Development Nigeria, Digital Marketing Nigeria, Oga Dave Tech">
+  <title>Web Development & Digital Solutions in Nigeria | OGA DAVE CONCEPTS</title>
+  <meta name="description" content="Professional web development, mobile apps, UI/UX design and digital marketing in Abuja, Nigeria. OGA DAVE CONCEPTS builds high-performing digital products.">
+  <meta name="keywords" content="Web Development Nigeria, App Development Abuja, Digital Marketing Nigeria, UI UX Design Nigeria, Oga Dave Tech">
   <meta name="author" content="OGA DAVE CONCEPTS">
   <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Techpreneur | OGA DAVE CONCEPTS">
-  <meta property="og:description" content="We build websites, apps and digital products that grow your business">
+  <meta property="og:description" content="We build websites, apps and digital products that grow your business — Abuja, Nigeria.">
   <meta property="og:image" content="https://www.ogadaveconcepts.com.ng/images/logo.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.ogadaveconcepts.com.ng/techpreneur.html">
-
   <link rel="canonical" href="https://www.ogadaveconcepts.com.ng/techpreneur.html">
   <link rel="icon" href="images/favicon.ico">
-  <link rel="preload" href="images/logo.jpg" as="image">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <script type="application/Id+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Techpreneur | OGA DAVE CONCEPTS",
-  "description": "We build websites, apps and digital products that grow your business",
-  "areaServed": "Nigeria",
-  "areaType": "Web Development",
-  "genre": "Technology, Business",
-  "url": "https://www.ogadaveconcepts.com.ng/techpreneur.html",
-
-  "url": "https://www.ogadaveconcepts.com.ng/techpreneur.html"
-}
-  </script>
-
-  <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
-  <style>
-    .hero {
-      padding-top: 120px;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #0a0a0a, #111);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      opacity: 0.8;
-      margin-top: 10px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: #111;
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid rgba(212,175,55,0.2);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 20px rgba(212,175,55,0.2);
-    }
-
-     .card i {
-      font-size: 2rem;
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .gold { color: #d4af37; }
-
-    .portfolio img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    /* CTA */
-    .cta {
-      background: #111;
-      padding: 60px 20px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<header class="navbar">
-  <div class="nav-container">
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-    <div class="logo">
-      <a href="#home" class="logo-link">
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
         <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
         <span>OGA DAVE CONCEPTS</span>
       </a>
-    </div>
-
-    <!-- MENU BUTTON -->
-    <div class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
-
-    <!-- NAV LINKS -->
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
-      <a href="index.html#about"><i class="fas fa-user"></i> About</a>
-      <a href="index.html#services" class="active"><i class="fas fa-briefcase"></i> Services</a>
-      <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
-      <a href="blog-detail.html"><i class="fas fa-blog"></i> Blog</a>
-      <a href="airdrop.html"><i class="fas fa-gift"></i> Airdrop</a>
-    </nav>
-
-  </div>
-</header>
-
-<!-- BACKDROP -->
-<div id="navBackdrop" class="nav-backdrop"></div>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>We Build <span class="gold">Digital Products That Make You Money</span></h1>
-  <p>Websites, apps, and systems designed to grow your business.</p>
-
-  <p style="color:#d4af37; margin-top:10px;">⚡ Fast delivery. Results-driven.</p>
-
-  <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20want%20to%20build%20a%20website" class="btn gold-btn">
-    <i class="fab fa-whatsapp"></i> Start Your Project
-  </a>
-</section>
-
-<section>
-  <h2>Proven <span class="gold">Results</span></h2>
-  <p>We don’t just build — we deliver results.</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>26+</h3>
-      <p>Websites & Apps Built</p>
-    </div>
-
-    <div class="card">
-      <h3>58+</h3>
-      <p>Brands Scaled with Marketing</p>
-    </div>
-
-    <div class="card">
-      <h3>100%</h3>
-      <p>Client Satisfaction Focus</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section>
-  <h2>Our <span class="gold">Tech Services</span></h2>
-
-  <div class="grid">
-    <div class="card">
-      <i class="fas fa-globe"></i>
-      <h3>Website Development</h3>
-      <p>Modern, responsive, and high-converting websites.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>App Development</h3>
-      <p>Custom web and mobile apps tailored to your business needs.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-paint-brush"></i>
-      <h3>UI/UX Design</h3>
-      <p>Clean and engaging designs that users love.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-bullhorn"></i>
-      <h3>Social Media Marketing</h3>
-      <p>Grow your brand visibility and attract paying customers.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-envelope"></i>
-      <h3>Email Marketing</h3>
-      <p>Convert leads into loyal customers with smart campaigns.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-bullhorn"></i>
-      <h3>Digital Marketing</h3>
-      <p>SEO, social media, and ads that bring real results.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio">
-  <h2>Proven <span class="gold">Projects</span></h2>
-  <p>Real businesses we’ve helped grow.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img src="images/midahairstore.png" alt="Mida Hair Store">
-      <h3>Mida Hair Store</h3>
-      <p>E-commerce platform for premium hair products.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/lustre.jpeg" alt="Lustre Interiors">
-      <h3>Lustre Interiors</h3>
-      <p>Premium interior design brand website.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/soundhope.jpeg" alt="SoundHope School">
-      <h3>SoundHope School</h3>
-      <p>Educational platform with modern UI.</p>
-    </div>
-
-    <div style="margin-top: 40px;">
-  <a href="index.html#portfolio" class="btn outline-btn">
-    View More Projects
-  </a>
-</div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<section>
-  <h2>Why Clients <span class="gold">Choose Us</span></h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Professional</h3>
-      <p>Clean, premium, and modern design delivery.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fast Delivery</h3>
-      <p>We meet deadlines without excuses.</p>
-    </div>
-
-    <div class="card">
-      <h3>Results Driven</h3>
-      <p>We build for growth, not just aesthetics.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>Have a Project in Mind?</h2>
-  <p>Let’s turn your idea into reality.</p>
-
-  <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE%20CONCEPTS,%20I%20am%20interested%20in%20your%20services" class="btn gold-btn">
-    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</section>
-
-<!-- ====== Footer Start ====== -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>About Us</h3>
-      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
-    </div>
-
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="index.html#about"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a></li>
-    <li><a href="index.html#blog"><i class="fas fa-blog"></i> Blog</a></li>
-    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <ul>
-        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
-        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
-        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Follow Us</h3>
-      <div class="social-links">
-        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="index.html#about" class="nav-item">About</a>
+        <a href="index.html#services" class="nav-item active">Services</a>
+        <a href="index.html#contact" class="nav-item">Contact</a>
+        <a href="blog-detail.html" class="nav-item">Blog</a>
+        <a href="airdrop.html" class="nav-item">Airdrops</a>
+      </nav>
+      <div class="nav-right">
+        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20to%20build%20a%20website" target="_blank" class="nav-cta">
+          <i class="fab fa-whatsapp"></i> Start a Project
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </div>
+  </header>
+  <div id="navBackdrop" class="nav-backdrop"></div>
 
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="page-hero-glow"></div>
+      <div class="page-hero-grid"></div>
+    </div>
+    <div class="page-hero-inner" data-reveal>
+      <div class="page-hero-tag"><i class="fas fa-laptop-code"></i> Techpreneur</div>
+      <h1>We Build Digital Products<br><em>That Make You Money.</em></h1>
+      <p>Websites, apps, and systems designed to grow your business, attract clients, and establish your brand as a force online.</p>
+      <div class="page-hero-actions">
+        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20to%20build%20a%20website" target="_blank" class="btn btn-gold">
+          <i class="fab fa-whatsapp"></i> Start Your Project
+        </a>
+        <a href="index.html#portfolio" class="btn btn-outline">View Our Work</a>
+      </div>
+      <div class="page-hero-trust">
+        <div class="trust-item"><i class="fas fa-globe"></i> 26+ Websites Built</div>
+        <div class="trust-item"><i class="fas fa-rocket"></i> Fast Delivery</div>
+        <div class="trust-item"><i class="fas fa-star"></i> 58+ Brands Scaled</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Results-Driven</div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Mobile menu toggle
-const toggle = document.getElementById("menuToggle");
-const nav = document.getElementById("navLinks");
-const backdrop = document.getElementById("navBackdrop");
+  <!-- SERVICES -->
+  <section class="page-section page-section--dark">
+    <div class="page-section-inner">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Tech Services</p>
+        <h2 class="section-heading">Everything Your Business<br><em>Needs Online.</em></h2>
+        <p class="section-subtext">From concept to launch — we handle every layer of your digital presence.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-globe"></i></div>
+          <h3>Website Development</h3>
+          <p>Modern, fast, and fully responsive websites — built to convert visitors into customers. Clean code, premium design, zero shortcuts.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>App Development</h3>
+          <p>Custom web and mobile applications built to your business requirements. From MVPs to full-scale platforms.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>UI/UX & Graphics Design</h3>
+          <p>Clean, intuitive interfaces and compelling brand visuals. Designs that communicate trust, professionalism, and authority.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-search"></i></div>
+          <h3>SEO Optimization</h3>
+          <p>Get found on Google. We optimize your site structure, content, and technical SEO to drive organic traffic and leads.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Social Media Marketing</h3>
+          <p>Content strategy, brand voice, and audience growth across Instagram, LinkedIn, TikTok, and Facebook.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Digital Marketing & Ads</h3>
+          <p>Paid ads, email campaigns, and full-funnel digital marketing strategies that generate real, measurable ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-// OPEN MENU
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-backdrop.classList.toggle("active");
-});
+  <!-- PORTFOLIO HIGHLIGHTS -->
+  <section class="page-section page-section--alt">
+    <div class="page-section-inner">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-heading">Projects That<br><em>Prove the Point.</em></h2>
+      </div>
 
-// CLOSE FUNCTION
-function closeMenu() {
-  nav.classList.remove("active");
-  backdrop.classList.remove("active");
-}
+      <div class="mini-portfolio-grid">
+        <div class="mini-portfolio-card" data-reveal>
+          <img src="images/digijewel.jpg" alt="Digi Jewelry Store">
+          <div class="mp-body">
+            <h3>Digi Jewelry Store</h3>
+            <p>Modern e-commerce platform for premium wristwatches.</p>
+          </div>
+        </div>
+        
+      <div class="mini-portfolio-grid">
+        <div class="mini-portfolio-card" data-reveal>
+          <img src="images/midahairstore.png" alt="Mida Hair Store">
+          <div class="mp-body">
+            <h3>Mida Hair Store</h3>
+            <p>E-commerce platform for premium hairs and hair care products.</p>
+          </div>
+        </div>
+        <div class="mini-portfolio-card" data-reveal>
+          <img src="images/lustre.jpeg" alt="Lustre Interiors">
+          <div class="mp-body">
+            <h3>Lustre Interiors</h3>
+            <p>Premium interior design brand website.</p>
+          </div>
+        </div>
+        <div class="mini-portfolio-card" data-reveal>
+          <img src="images/soundhope.jpeg" alt="SoundHope School">
+          <div class="mp-body">
+            <h3>SoundHope School</h3>
+            <p>Educational platform with a modern, clean UI.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:48px;" data-reveal>
+        <a href="index.html#portfolio" class="btn btn-outline">View All Projects <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
 
-// CLICK BACKDROP = CLOSE
-backdrop.addEventListener("click", closeMenu);
+  <!-- WHY CHOOSE -->
+  <section class="page-section page-section--dark">
+    <div class="page-section-inner">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Why Choose Us</p>
+        <h2 class="section-heading">Not Just a Dev Shop.<br><em>A Growth Partner.</em></h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-gem"></i></div>
+          <h3>Premium Quality</h3>
+          <p>Every project is handled with senior-level attention to detail. No templates, no shortcuts — only custom, polished work.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>We set realistic timelines and we hit them — every time. Fast delivery without compromising on quality.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="fc-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Business-First Thinking</h3>
+          <p>We don't just build — we think about your business goals and make sure the product actually moves the needle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-// AUTO CLOSE ON LINK CLICK
-document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", closeMenu);
-});
+  <!-- CTA BANNER -->
+  <section class="page-section page-section--alt">
+    <div class="page-section-inner">
+      <div class="cta-banner" data-reveal>
+        <h2>Have a Project in Mind?</h2>
+        <p>Let's turn your idea into a digital product that works. Tell us what you need and we'll get started.</p>
+        <div class="cta-banner-actions">
+          <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20to%20build%20a%20website" target="_blank" class="btn btn-gold">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-// ==========================
-// SWIPE TO CLOSE (MOBILE)
-// ==========================
-let startX = 0;
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS">
+          <span>OGA DAVE CONCEPTS</span>
+        </div>
+        <p>Your digital partner from blockchain to brickwork. Crypto, Tech & Real Estate — out of Abuja, Nigeria.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/share/1B7sF6r8cM/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ogadaveconcepts/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/obuo-david-7a2a88199" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/virtuousdave32" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.tiktok.com/@oga_dave_concepts" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="cryptopreneur.html">Cryptopreneur</a></li>
+            <li><a href="techpreneur.html">Techpreneur</a></li>
+            <li><a href="real-estate.html">Real Estate</a></li>
+            <li><a href="airdrop.html">Airdrop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Projects</a></li>
+            <li><a href="blog-detail.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+            <li><i class="fas fa-phone"></i> +234 816 0693 873</li>
+            <li><i class="fas fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+      <p>Built with passion in Abuja, Nigeria 🇳🇬</p>
+    </div>
+  </footer>
 
-nav.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
+  <a href="https://wa.me/2348160693873" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat with us</span>
+  </a>
+  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
-nav.addEventListener("touchmove", (e) => {
-  let currentX = e.touches[0].clientX;
-
-  // swipe right → close
-  if (currentX - startX > 80) {
-    closeMenu();
-  }
-});
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>

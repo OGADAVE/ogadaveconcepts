@@ -77,17 +77,44 @@ if (preloader) {
   /* Mobile menu open / close */
   if (!toggle || !nav || !backdrop) return;
 
-  function openMenu()  { nav.classList.add('active'); backdrop.classList.add('active'); toggle.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeMenu() { nav.classList.remove('active'); backdrop.classList.remove('active'); toggle.classList.remove('open'); document.body.style.overflow = ''; }
+  function openMenu() {
+    nav.classList.add('active');
+    backdrop.classList.add('active');
+    toggle.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    backdrop.classList.remove('active');
+    toggle.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-  toggle.addEventListener('click', () => nav.classList.contains('active') ? closeMenu() : openMenu());
+  /* stopPropagation ensures backdrop click never fires when toggle is tapped */
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();
+    nav.classList.contains('active') ? closeMenu() : openMenu();
+  });
+
+  /* Clicking the backdrop closes — but not if the toggle was the target */
   backdrop.addEventListener('click', closeMenu);
+
+  /* Close on nav link click */
   nav.querySelectorAll('.nav-item').forEach(a => a.addEventListener('click', closeMenu));
+
+  /* Close on outside click (desktop/tablet hybrid) */
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
 
   /* Swipe right to close */
   let startX = 0;
   nav.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  nav.addEventListener('touchmove',  e => { if (e.touches[0].clientX - startX > 80) closeMenu(); }, { passive: true });
+  nav.addEventListener('touchmove', e => {
+    if (e.touches[0].clientX - startX > 80) closeMenu();
+  }, { passive: true });
 })();
 
 /* ─────────────────────────────

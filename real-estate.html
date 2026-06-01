@@ -38,14 +38,13 @@
         <a href="index.html" class="nav-item">Home</a>
         <a href="index.html#about" class="nav-item">About</a>
         <a href="index.html#services" class="nav-item active">Services</a>
+        <a href="index.html#portfolio" class="nav-item">Projects</a>
         <a href="index.html#contact" class="nav-item">Contact</a>
         <a href="blog-detail.html" class="nav-item">Blog</a>
-        <a href="airdrop.html" class="nav-item">Airdrops</a>
+        <a href="airdrop.html" class="nav-item">Airdrop</a>
+        <a href="learn.html" class="nav-item">Learn</a>
       </nav>
       <div class="nav-right">
-        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20to%20buy%20property" target="_blank" class="nav-cta">
-          <i class="fab fa-whatsapp"></i> View Properties
-        </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -239,6 +238,135 @@
     </div>
   </section>
 
+
+  <!-- PROPERTY ALERT SECTION -->
+  <section class="property-alert-section">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Property Alerts</p>
+        <h2 class="section-heading">Never Miss a<br><em>Property Deal Again.</em></h2>
+        <p class="section-subtext">Register your preferences and we'll notify you the moment a matching property becomes available — before anyone else.</p>
+      </div>
+      <div class="property-alert-wrap" data-reveal>
+        <div class="property-alert-header">
+          <div class="property-alert-icon"><i class="fas fa-bell"></i></div>
+          <div>
+            <h3>Set Your Property Alert</h3>
+            <p>Fill in your preferences below — we'll match you with available properties and notify you instantly via email and WhatsApp.</p>
+          </div>
+        </div>
+        <form class="alert-form-grid" id="propertyAlertForm">
+          <div class="alert-field">
+            <label>Full Name *</label>
+            <input id="alertName" type="text" placeholder="Obuo David" required>
+          </div>
+          <div class="alert-field">
+            <label>Email Address *</label>
+            <input id="alertEmail" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="alert-field">
+            <label>WhatsApp / Phone *</label>
+            <input id="alertPhone" type="tel" placeholder="+234 800 000 0000" required>
+          </div>
+          <div class="alert-field">
+            <label>Maximum Budget</label>
+            <select id="alertBudget">
+              <option value="">Select budget range</option>
+              <option value="Under ₦5M">Under ₦5M</option>
+              <option value="₦5M – ₦15M">₦5M – ₦15M</option>
+              <option value="₦15M – ₦30M">₦15M – ₦30M</option>
+              <option value="₦30M – ₦60M">₦30M – ₦60M</option>
+              <option value="₦60M – ₦100M">₦60M – ₦100M</option>
+              <option value="Above ₦100M">Above ₦100M</option>
+            </select>
+          </div>
+          <div class="alert-field">
+            <label>Property Type</label>
+            <select id="alertType">
+              <option value="Any">Any</option>
+              <option value="Land">Land / Plot</option>
+              <option value="Residential">Residential Building</option>
+              <option value="Commercial">Commercial Property</option>
+              <option value="Estate">Estate / Gated Community</option>
+            </select>
+          </div>
+          <div class="alert-field">
+            <label>Preferred Plot Size</label>
+            <select id="alertPlotSize">
+              <option value="Any">Any size</option>
+              <option value="Under 200sqm">Under 200sqm</option>
+              <option value="200 – 400sqm">200 – 400sqm</option>
+              <option value="400 – 600sqm">400 – 600sqm</option>
+              <option value="600 – 1000sqm">600 – 1,000sqm</option>
+              <option value="Above 1000sqm">Above 1,000sqm</option>
+            </select>
+          </div>
+          <div class="alert-field">
+            <label>Purpose</label>
+            <select id="alertPurpose">
+              <option value="Personal Use">Personal / Family Use</option>
+              <option value="Investment">Investment / Land Banking</option>
+              <option value="Development">Development / Building</option>
+              <option value="Rental Income">Rental Income</option>
+            </select>
+          </div>
+          <div class="alert-field">
+            <label>Preferred Location(s) in Abuja</label>
+            <div class="location-checks">
+              <input type="checkbox" id="loc1" class="location-check" value="Katampe">
+              <label class="location-check-label" for="loc1">Katampe</label>
+              <input type="checkbox" id="loc2" class="location-check" value="Asokoro">
+              <label class="location-check-label" for="loc2">Asokoro</label>
+              <input type="checkbox" id="loc3" class="location-check" value="Guzape">
+              <label class="location-check-label" for="loc3">Guzape</label>
+              <input type="checkbox" id="loc4" class="location-check" value="Kuje">
+              <label class="location-check-label" for="loc4">Kuje</label>
+              <input type="checkbox" id="loc5" class="location-check" value="Gwarinpa">
+              <label class="location-check-label" for="loc5">Gwarinpa</label>
+              <input type="checkbox" id="loc6" class="location-check" value="Lugbe">
+              <label class="location-check-label" for="loc6">Lugbe</label>
+              <input type="checkbox" id="loc7" class="location-check" value="Maitama">
+              <label class="location-check-label" for="loc7">Maitama</label>
+              <input type="checkbox" id="loc8" class="location-check" value="Any">
+              <label class="location-check-label" for="loc8">Anywhere in Abuja</label>
+            </div>
+          </div>
+          <div class="alert-field span2">
+            <label>Additional Notes (optional)</label>
+            <textarea id="alertNotes" placeholder="Any specific requirements, questions, or preferences..." rows="3"></textarea>
+          </div>
+          <div class="alert-submit-row span2">
+            <button type="submit" class="btn btn-gold btn-submit">
+              <span class="btn-label"><i class="fas fa-bell"></i> Register My Alert</span>
+              <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i> Registering...</span>
+            </button>
+            <div class="alert-msg" id="alertMsg"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-wrap" data-reveal>
+      <div class="newsletter-icon"><i class="fas fa-home"></i></div>
+      <p class="section-eyebrow" style="justify-content:center;">Property Digest</p>
+      <h2 class="section-heading">Get Weekly Property<br><em>Deals in Your Inbox.</em></h2>
+      <p class="section-subtext" style="margin:0 auto;">New listings, investment tips, and Abuja real estate market updates — every week, free.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input class="newsletter-input" type="email" placeholder="Your email address..." required>
+        <button class="newsletter-submit" type="submit">Get Property Alerts</button>
+      </form>
+      <div class="newsletter-perks">
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> New listings weekly</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> Investment tips</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> No spam ever</span>
+      </div>
+      <div class="newsletter-msg"></div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="page-section page-section--alt">
     <div class="page-section-inner">
@@ -247,7 +375,7 @@
         <p>Talk to our realtor today and find the perfect property investment for your goals and budget.</p>
         <div class="cta-banner-actions">
           <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20am%20ready%20to%20invest%20in%20real%20estate" target="_blank" class="btn btn-gold">
-            <i class="fab fa-whatsapp"></i> Talk to OGA DAVE CONCEPTS Now
+            <i class="fab fa-whatsapp"></i> Talk to OGA DAVE Now
           </a>
           <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
         </div>
@@ -280,6 +408,7 @@
             <li><a href="techpreneur.html">Techpreneur</a></li>
             <li><a href="real-estate.html">Real Estate</a></li>
             <li><a href="airdrop.html">Airdrop</a></li>
+            <li><a href="learn.html">Learn</a></li>
           </ul>
         </div>
         <div class="footer-col">

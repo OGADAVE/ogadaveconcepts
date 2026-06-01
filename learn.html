@@ -1,301 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Learn to Earn | Oga Dave Concepts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Crypto, Tech & Real Estate Guides Nigeria | OGA DAVE CONCEPTS</title>
+  <meta name="description" content="Download free beginner guides on crypto trading, web development, and real estate investing in Nigeria. Expert resources from OGA DAVE CONCEPTS — Abuja.">
+  <meta name="keywords" content="free crypto guide Nigeria, learn crypto Nigeria, real estate guide Abuja, web development guide Nigeria, Oga Dave learn">
+  <meta name="author" content="OGA DAVE CONCEPTS">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Free Learning Resources | OGA DAVE CONCEPTS">
+  <meta property="og:description" content="Download free expert guides on crypto, tech, and real estate in Nigeria.">
+  <meta property="og:image" content="https://www.ogadaveconcepts.com.ng/images/logo.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ogadaveconcepts.com.ng/learn.html">
+  <link rel="canonical" href="https://www.ogadaveconcepts.com.ng/learn.html">
+  <link rel="icon" href="images/favicon.ico">
 
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #000;
-  color: #fff;
-}
-
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Montserrat';
-  color: gold;
-}
-
-.stats {
-  display: flex;
-  gap: 15px;
-}
-
-.stat-box {
-  background: #111;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-}
-
-.stat-box span {
-  color: gold;
-  font-weight: bold;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 30px 20px;
-}
-
-.hero h1 {
-  font-family: 'Montserrat';
-}
-
-.hero p {
-  color: #bbb;
-}
-
-/* LESSON CARD */
-.lesson {
-  max-width: 600px;
-  margin: auto;
-  background: #111;
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,215,0,0.2);
-}
-
-.lesson h2 {
-  color: gold;
-}
-
-.lesson p {
-  color: #ccc;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: gold;
-  color: #000;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* QUIZ MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #111;
-  padding: 25px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 500px;
-}
-
-.option {
-  background: #222;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.option:hover {
-  background: #333;
-}
-
-/* RESULT */
-.result {
-  text-align: center;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-}
-</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OGA DAVE CONCEPTS Learning Hub",
+    "description": "Free expert guides on crypto trading, web development and real estate investing in Nigeria",
+    "url": "https://www.ogadaveconcepts.com.ng/learn.html",
+    "provider": { "@type": "Organization", "name": "OGA DAVE CONCEPTS" }
+  }
+  </script>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="logo">🎓 Learn & Earn</div>
-  <div class="stats">
-    <div class="stat-box">💰 <span id="coins">120</span></div>
-    <div class="stat-box">🔥 <span id="streak">3</span> days</div>
-  </div>
-</div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Earn Coins While You Learn</h1>
-  <p>Complete today's lesson and win rewards</p>
-</section>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS Logo">
+        <span>OGA DAVE CONCEPTS</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="index.html#about" class="nav-item">About</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#contact" class="nav-item">Contact</a>
+        <a href="blog-detail.html" class="nav-item">Blog</a>
+        <a href="airdrop.html" class="nav-item">Airdrops</a>
+        <a href="learn.html" class="nav-item active">Learn</a>
+      </nav>
 
-<!-- LESSON -->
-<div class="lesson">
-  <h2 id="lesson-title">What is Blockchain?</h2>
-  <p id="lesson-content">
-    Blockchain is a decentralized digital ledger that records transactions across multiple computers...
-  </p>
-
-  <button class="btn" onclick="startQuiz()">Start Quiz</button>
-</div>
-
-<!-- QUIZ MODAL -->
-<div class="modal" id="quizModal">
-  <div class="modal-content" id="quizBox">
-    
-    <!-- Question -->
-    <h3 id="question">Loading...</h3>
-
-    <!-- Options -->
-    <div id="options"></div>
-
-    <button class="btn" onclick="nextQuestion()">Next</button>
-  </div>
-</div>
-
-<!-- ====== Footer Start ====== -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>About Us</h3>
-      <p>We share the latest insights, trends, and stories across Cryptocurrencies and digital markets, real estate, business, and lifestyle — helping you make smarter decisions every day.</p>
-    </div>
-
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
-    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
-    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <ul>
-        <li><i class="fa fa-map-marker"></i> Abuja, Nigeria</li>
-        <li><i class="fa fa-phone"></i> +234 816 0693 873</li>
-        <li><i class="fa fa-envelope"></i> ogadaveconcepts@gmail.com</li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Follow Us</h3>
-      <div class="social-links">
-        <a href="https://www.facebook.com/share/1B7sF6r8cM/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ogadaveconcepts/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/obuo-david-7a2a88199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/virtuousdave32"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.tiktok.com/@oga_dave_concepts"><i class="fab fa-tiktok"></i></a>
+      <div class="nav-right">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </div>
+  </header>
+  <div id="navBackdrop" class="nav-backdrop"></div>
 
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-let quiz = [
-  {
-    question: "What is blockchain?",
-    options: ["A bank", "A decentralized ledger", "A game", "A website"],
-    answer: 1
-  },
-  {
-    question: "Blockchain is?",
-    options: ["Centralized", "Private only", "Decentralized", "Offline"],
-    answer: 2
-  },
-  {
-    question: "Which is a popular blockchain platform?",
-    options: ["Ethereum", "Google", "Facebook", "Amazon"],
-    answer: 0
-  }
-];
-
-let current = 0;
-let score = 0;
-
-function startQuiz() {
-  document.getElementById("quizModal").style.display = "flex";
-  loadQuestion();
-}
-
-function loadQuestion() {
-  const q = quiz[current];
-  document.getElementById("question").innerText = q.question;
-
-  const optionsBox = document.getElementById("options");
-  optionsBox.innerHTML = "";
-
-  q.options.forEach((opt, index) => {
-    const div = document.createElement("div");
-    div.classList.add("option");
-    div.innerText = opt;
-    div.onclick = () => selectAnswer(index);
-    optionsBox.appendChild(div);
-  });
-}
-
-function selectAnswer(index) {
-  if (index === quiz[current].answer) {
-    score++;
-  }
-}
-
-function nextQuestion() {
-  current++;
-  if (current < quiz.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-}
-
-function showResult() {
-  const coinsEarned = score * 10;
-
-  document.getElementById("quizBox").innerHTML = `
-    <div class="result">
-      <h2>🎉 You earned ${coinsEarned} coins</h2>
-      <p>Your Score: ${score}/${quiz.length}</p>
-      <button class="btn" onclick="location.reload()">Done</button>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="page-hero-glow"></div>
+      <div class="page-hero-grid"></div>
     </div>
-  `;
-}
-</script>
+    <div class="page-hero-inner" data-reveal>
+      <div class="page-hero-tag"><i class="fas fa-graduation-cap"></i> Free Learning Hub</div>
+      <h1>Expert Guides.<br><em>Completely Free.</em></h1>
+      <p>Download beginner-to-pro guides on crypto trading, web development, and real estate investing in Nigeria — written from real experience by OGA DAVE.</p>
+      <div class="page-hero-actions">
+        <a href="#resources" class="btn btn-gold">Browse Free Guides <i class="fas fa-arrow-down"></i></a>
+        <a href="blog-detail.html" class="btn btn-outline">Read the Blog</a>
+      </div>
+      <div class="page-hero-trust">
+        <div class="trust-item"><i class="fas fa-file-pdf"></i> PDF Format</div>
+        <div class="trust-item"><i class="fas fa-lock-open"></i> 100% Free</div>
+        <div class="trust-item"><i class="fas fa-star"></i> Expert Written</div>
+        <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Nigeria-Focused</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- RESOURCES GRID -->
+  <section class="page-section page-section--dark" id="resources">
+    <div class="page-section-inner">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Free Downloads</p>
+        <h2 class="section-heading">Pick Your Guide.<br><em>Start Learning Today.</em></h2>
+        <p class="section-subtext">Enter your name and email to unlock instant access. No spam — just your free guide.</p>
+      </div>
+
+      <div class="resources-grid">
+
+        <!-- Guide 1 -->
+        <div class="resource-card" data-reveal>
+          <div class="resource-card-top">
+            <div class="resource-icon"><i class="fas fa-coins"></i></div>
+            <div class="resource-cat">Crypto</div>
+            <h3>Crypto for Beginners in Nigeria — 2025 Guide</h3>
+            <p>Everything a complete beginner needs to know about buying, selling, and storing crypto safely in Nigeria. Covers wallets, P2P trading, avoiding scams, and your first trade.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-clock"></i> 20 min read</span>
+              <span><i class="fas fa-star"></i> Beginner</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openGate('assets/guides/crypto-beginners-nigeria-2025.pdf', 'Crypto for Beginners in Nigeria — 2025 Guide')">
+              <i class="fas fa-download"></i> Download Free
+            </button>
+          </div>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="resource-card" data-reveal>
+          <div class="resource-card-top">
+            <div class="resource-icon"><i class="fas fa-building"></i></div>
+            <div class="resource-cat">Real Estate</div>
+            <h3>How to Spot a Legit Real Estate Deal in Abuja</h3>
+            <p>A practical guide to buying property safely in Abuja. Learn how to verify land documents, spot scam listings, understand C of O vs Deed of Assignment, and negotiate the right price.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-clock"></i> 15 min read</span>
+              <span><i class="fas fa-star"></i> Beginner–Mid</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openGate('assets/guides/legit-real-estate-abuja-guide.pdf', 'How to Spot a Legit Real Estate Deal in Abuja')">
+              <i class="fas fa-download"></i> Download Free
+            </button>
+          </div>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="resource-card" data-reveal>
+          <div class="resource-card-top">
+            <div class="resource-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="resource-cat">Tech</div>
+            <h3>How to Build a Business Website in Nigeria Without Coding</h3>
+            <p>A step-by-step guide for Nigerian entrepreneurs who want a professional website without technical skills. Covers platforms, hosting, domain registration, and what to look for when hiring a developer.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-clock"></i> 18 min read</span>
+              <span><i class="fas fa-star"></i> Beginner</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openGate('assets/guides/build-website-nigeria-no-code.pdf', 'How to Build a Business Website in Nigeria Without Coding')">
+              <i class="fas fa-download"></i> Download Free
+            </button>
+          </div>
+        </div>
+
+        <!-- Guide 4 -->
+        <div class="resource-card" data-reveal>
+          <div class="resource-card-top">
+            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="resource-cat">Crypto</div>
+            <h3>Crypto Trading Strategies That Work in Nigeria — 2025</h3>
+            <p>Beyond buying and holding. Learn the trading strategies Nigerian crypto traders use to generate consistent profits — including P2P arbitrage, swing trading basics, and risk management rules.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-clock"></i> 25 min read</span>
+              <span><i class="fas fa-star"></i> Intermediate</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openGate('assets/guides/crypto-trading-strategies-nigeria.pdf', 'Crypto Trading Strategies That Work in Nigeria')">
+              <i class="fas fa-download"></i> Download Free
+            </button>
+          </div>
+        </div>
+
+        <!-- Guide 5 -->
+        <div class="resource-card" data-reveal>
+          <div class="resource-card-top">
+            <div class="resource-icon"><i class="fas fa-seedling"></i></div>
+            <div class="resource-cat">Real Estate</div>
+            <h3>Land Banking in Abuja — The Smart Investor's Playbook</h3>
+            <p>How to buy land in Abuja's fastest-growing areas and watch your investment multiply. Covers which estates are appreciating fastest, what documents to demand, and when to sell for maximum profit.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-clock"></i> 20 min read</span>
+              <span><i class="fas fa-star"></i> All Levels</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openGate('assets/guides/land-banking-abuja-guide.pdf', 'Land Banking in Abuja — The Smart Investor Playbook')">
+              <i class="fas fa-download"></i> Download Free
+            </button>
+          </div>
+        </div>
+
+        <!-- Guide 6 — Coming Soon -->
+        <div class="resource-card" data-reveal style="opacity:0.6;">
+          <div class="resource-card-top">
+            <div class="resource-icon" style="opacity:0.5;"><i class="fas fa-bullhorn"></i></div>
+            <div class="resource-cat">Marketing</div>
+            <h3>Social Media Marketing for Nigerian Small Businesses — 2025</h3>
+            <p>How to grow your brand on Instagram, TikTok, and Facebook — with zero ad spend. Content strategies, posting schedules, and what actually converts followers into paying customers in Nigeria.</p>
+            <div class="resource-meta">
+              <span><i class="fas fa-file-pdf"></i> PDF Guide</span>
+              <span><i class="fas fa-hourglass-half"></i> Coming Soon</span>
+            </div>
+          </div>
+          <div class="resource-card-footer">
+            <button class="btn btn-outline" style="width:100%;justify-content:center;cursor:not-allowed;opacity:0.6;" disabled>
+              <i class="fas fa-clock"></i> Coming Soon — Join Newsletter
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="newsletter-section">
+    <div class="newsletter-wrap" data-reveal>
+      <div class="newsletter-icon"><i class="fas fa-graduation-cap"></i></div>
+      <p class="section-eyebrow" style="justify-content:center;">Stay Updated</p>
+      <h2 class="section-heading">New Guides Drop<br><em>Every Month.</em></h2>
+      <p class="section-subtext" style="margin:0 auto;">Subscribe to get notified when new free guides are published — plus weekly crypto rates, property deals, and airdrop alerts.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input class="newsletter-input" type="email" placeholder="Your email address..." required>
+        <button class="newsletter-submit" type="submit">Notify Me Free</button>
+      </form>
+      <div class="newsletter-perks">
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> New guide alerts</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> Weekly insights</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> No spam, ever</span>
+      </div>
+      <div class="newsletter-msg"></div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="page-section page-section--dark">
+    <div class="page-section-inner">
+      <div class="cta-banner" data-reveal>
+        <h2>Want Personalised Guidance?</h2>
+        <p>The guides are a starting point. For tailored strategy — crypto, tech, or real estate — book a free call with OGA DAVE.</p>
+        <div class="cta-banner-actions">
+          <a href="https://calendly.com/ogadaveconcepts" target="_blank" rel="noopener" class="btn btn-gold">
+            <i class="fas fa-calendar-check"></i> Book Free Consultation
+          </a>
+          <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20personalised%20guidance" target="_blank" class="btn btn-outline">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.jpg" alt="OGA DAVE CONCEPTS">
+          <span>OGA DAVE CONCEPTS</span>
+        </div>
+        <p>Your digital partner from blockchain to brickwork. Crypto, Tech & Real Estate — out of Abuja, Nigeria.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/share/1B7sF6r8cM/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ogadaveconcepts/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/obuo-david-7a2a88199" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/virtuousdave32" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.tiktok.com/@oga_dave_concepts" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="cryptopreneur.html">Cryptopreneur</a></li>
+            <li><a href="techpreneur.html">Techpreneur</a></li>
+            <li><a href="real-estate.html">Real Estate</a></li>
+            <li><a href="airdrop.html">Airdrop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="learn.html">Free Guides</a></li>
+            <li><a href="blog-detail.html">Blog</a></li>
+            <li><a href="airdrop.html">Airdrops</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+            <li><i class="fas fa-phone"></i> +234 816 0693 873</li>
+            <li><i class="fas fa-envelope"></i> ogadaveconcepts@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> OGA DAVE CONCEPTS. All rights reserved.</p>
+      <p>Built with passion in Abuja, Nigeria 🇳🇬</p>
+    </div>
+  </footer>
+
+  <!-- EMAIL GATE MODAL -->
+  <div class="gate-modal" id="gateModal">
+    <div class="gate-card">
+      <button class="gate-close" onclick="closeGate()"><i class="fas fa-times"></i></button>
+      <div class="gate-icon"><i class="fas fa-file-pdf"></i></div>
+      <h3>Unlock Your Free Guide</h3>
+      <p>Enter your name and email to get instant access to <strong id="gateResourceTitle">this guide</strong>. No spam — your details are private.</p>
+      <form class="gate-form" id="gateForm" onsubmit="return false;">
+        <input class="gate-input" id="gateName"  type="text"  placeholder="Your full name" required>
+        <input class="gate-input" id="gateEmail" type="email" placeholder="Your email address" required>
+        <button class="gate-submit" type="submit"><i class="fas fa-download"></i> Get Free Access</button>
+      </form>
+      <div class="gate-msg" id="gateMsg"></div>
+      <p style="font-size:0.72rem;color:var(--text-muted);margin-top:12px;">🔒 Your information is private and secure. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/2348160693873" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat with us</span>
+  </a>
+  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
 </body>
 </html>

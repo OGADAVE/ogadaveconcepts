@@ -41,20 +41,31 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html" class="nav-item">Home</a>
         <a href="index.html#about" class="nav-item">About</a>
-        <a href="index.html#services" class="nav-item active">Services</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#portfolio" class="nav-item">Projects</a>
         <a href="index.html#contact" class="nav-item">Contact</a>
         <a href="blog-detail.html" class="nav-item">Blog</a>
         <a href="airdrop.html" class="nav-item">Airdrops</a>
+        <a href="learn.html" class="nav-item">Learn</a>
       </nav>
       <div class="nav-right">
-        <a href="https://wa.me/2348160693873?text=Hello%20OGA%20DAVE,%20I%20want%20to%20trade%20crypto" target="_blank" class="nav-cta">
-          <i class="fab fa-whatsapp"></i> Start Trading
-        </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
+
+     <!-- LIVE TICKER BAR -->
+  <div class="crypto-ticker-bar">
+    <div style="display:flex;align-items:stretch;">
+      <div class="ticker-label"><i class="fas fa-chart-line"></i> LIVE</div>
+      <div class="ticker-scroll-wrap" style="flex:1;overflow:hidden;">
+        <div class="ticker-track" id="tickerTrack">
+          <div class="ticker-loading"><i class="fas fa-spinner fa-spin"></i> Loading live rates...</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </header>
   <div id="navBackdrop" class="nav-backdrop"></div>
 
@@ -80,6 +91,136 @@
         <div class="trust-item"><i class="fas fa-chart-line"></i> Expert Guidance</div>
         <div class="trust-item"><i class="fas fa-clock"></i> 24/7 Support</div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- LIVE RATES SECTION -->
+  <section class="rates-section">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Live Market Rates</p>
+        <h2 class="section-heading">Real-Time Crypto<br><em>Prices in Naira.</em></h2>
+        <p class="section-subtext">Prices update every 60 seconds via CoinGecko. Click Buy or Sell on any coin to trade instantly.</p>
+      </div>
+      <div class="rates-grid" id="rates-grid">
+        <!-- Skeletons while loading -->
+        <div style="background:var(--surface-2);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:28px 24px;">
+          <div style="height:20px;background:var(--surface-3);border-radius:4px;margin-bottom:16px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:32px;background:var(--surface-3);border-radius:4px;margin-bottom:10px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:14px;background:var(--surface-3);border-radius:4px;width:60%;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:28px 24px;">
+          <div style="height:20px;background:var(--surface-3);border-radius:4px;margin-bottom:16px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:32px;background:var(--surface-3);border-radius:4px;margin-bottom:10px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:14px;background:var(--surface-3);border-radius:4px;width:60%;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:28px 24px;">
+          <div style="height:20px;background:var(--surface-3);border-radius:4px;margin-bottom:16px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:32px;background:var(--surface-3);border-radius:4px;margin-bottom:10px;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+          <div style="height:14px;background:var(--surface-3);border-radius:4px;width:60%;animation:shimmer 1.5s infinite;background-size:200% 100%;"></div>
+        </div>
+      </div>
+      <p class="rates-last-updated">Fetching live rates...</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR SECTION -->
+  <section class="calculator-section">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Rate Calculator</p>
+        <h2 class="section-heading">How Much Will<br><em>I Get?</em></h2>
+        <p class="section-subtext">Convert Naira to any crypto — or crypto to Naira — at live market rates. Instantly.</p>
+      </div>
+      <div class="calculator-wrap" id="calculatorWrap" data-reveal>
+        <div class="calc-mode-toggle">
+          <button class="calc-mode-btn active" id="calcModeBuy">💰 I Want to Buy Crypto</button>
+          <button class="calc-mode-btn" id="calcModeSell">💸 I Want to Sell Crypto</button>
+        </div>
+        <!-- BUY ROW: NGN → Crypto -->
+        <div id="calcBuyRow">
+          <div class="calc-field">
+            <label>I Have (Naira ₦)</label>
+            <div class="calc-input-row">
+              <input class="calc-input" id="calcNGN" type="number" placeholder="e.g. 50000" min="0">
+              <div style="padding:16px 14px;background:var(--surface-3);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius-md);color:var(--text-muted);font-family:var(--font-mono);font-weight:700;font-size:0.9rem;">NGN</div>
+            </div>
+          </div>
+        </div>
+        <!-- SELL ROW: Crypto → NGN -->
+        <div id="calcSellRow" style="display:none;">
+          <div class="calc-field">
+            <label>I'm Selling</label>
+            <div class="calc-input-row">
+              <input class="calc-input" id="calcCoin" type="number" placeholder="e.g. 0.005" min="0" step="any">
+              <select class="calc-coin-select" id="calcCoinSelect">
+                <option value="bitcoin">BTC</option>
+                <option value="tether">USDT</option>
+                <option value="ethereum">ETH</option>
+                <option value="binancecoin">BNB</option>
+                <option value="solana">SOL</option>
+                <option value="ripple">XRP</option>
+                <option value="usd-coin">USDC</option>
+                <option value="cardano">ADA</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Coin selector for BUY mode -->
+        <div id="calcBuyRow">
+          <div class="calc-field">
+            <label>I Want to Receive</label>
+            <div class="calc-input-row" style="align-items:center;gap:10px;">
+              <select class="calc-coin-select" id="calcCoinSelect" style="width:100%;text-align:left;padding:16px 14px;">
+                <option value="bitcoin">Bitcoin (BTC)</option>
+                <option value="tether">Tether (USDT)</option>
+                <option value="ethereum">Ethereum (ETH)</option>
+                <option value="binancecoin">BNB</option>
+                <option value="solana">Solana (SOL)</option>
+                <option value="ripple">Ripple (XRP)</option>
+                <option value="usd-coin">USD Coin (USDC)</option>
+                <option value="cardano">Cardano (ADA)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="calc-swap-btn" id="calcSwapBtn" type="button">
+          <i class="fas fa-arrows-rotate"></i> Switch to Sell Mode
+        </button>
+        <div class="calc-result">
+          <div class="calc-result-label">You Will Receive</div>
+          <div class="calc-result-value" id="calcResultValue">—</div>
+          <div class="calc-result-sub" id="calcResultSub">Enter an amount above to calculate</div>
+        </div>
+        <p class="calc-rate-note" id="calcRateNote">Fetching live rate...</p>
+        <button class="btn btn-gold calc-cta" id="calcCTABtn" type="button">
+          <i class="fab fa-whatsapp"></i> Buy Crypto on WhatsApp
+        </button>
+        <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:12px;">
+          Rates are indicative. Final rate confirmed at time of trade. No hidden fees.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-wrap" data-reveal>
+      <div class="newsletter-icon"><i class="fas fa-envelope-open-text"></i></div>
+      <p class="section-eyebrow" style="justify-content:center;">Weekly Crypto Digest</p>
+      <h2 class="section-heading">Get Crypto Rates &<br><em>Market Updates Weekly.</em></h2>
+      <p class="section-subtext" style="margin:0 auto;">Join 500+ Nigerians getting the best rates, market trends, and airdrop alerts every week.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input class="newsletter-input" type="email" placeholder="Your email address..." required>
+        <button class="newsletter-submit" type="submit">Subscribe Free</button>
+      </form>
+      <div class="newsletter-perks">
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> Weekly rate updates</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> Airdrop alerts first</span>
+        <span class="newsletter-perk"><i class="fas fa-check-circle"></i> No spam ever</span>
+      </div>
+      <div class="newsletter-msg"></div>
     </div>
   </section>
 
@@ -295,6 +436,7 @@
             <li><a href="techpreneur.html">Techpreneur</a></li>
             <li><a href="real-estate.html">Real Estate</a></li>
             <li><a href="airdrop.html">Airdrop</a></li>
+            <li><a href="learn.html">Learn</a></li>
           </ul>
         </div>
         <div class="footer-col">

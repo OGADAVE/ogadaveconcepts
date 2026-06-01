@@ -668,3 +668,254 @@ document.addEventListener("keydown", e => {
   // ESC closes edit modal
   if (e.key === "Escape") editModal.classList.remove("show");
 });
+
+/* =====================================================
+   ADMIN ADDITIONS
+   Property Alerts · Newsletter Subscribers · Learn
+   ===================================================== */
+
+/* ── EXTENDED ANALYTICS ── */
+async function loadExtendedAnalytics() {
+  try {
+    const [alertSnap, subSnap] = await Promise.all([
+      getDocs(collection(db, 'propertyAlerts')),
+      getDocs(collection(db, 'newsletter'))
+    ]);
+    const alertEl = document.getElementById('totalAlerts');
+    const subEl   = document.getElementById('totalSubscribers');
+    const sidebarAlertCount = document.getElementById('sidebarAlertCount');
+    const sidebarSubCount   = document.getElementById('sidebarSubCount');
+
+    if (alertEl) alertEl.textContent = alertSnap.size;
+    if (subEl)   subEl.textContent   = subSnap.size;
+    if (sidebarAlertCount) sidebarAlertCount.textContent = alertSnap.size;
+    if (sidebarSubCount)   sidebarSubCount.textContent   = subSnap.size;
+  } catch (err) {
+    console.error('Extended analytics error:', err);
+  }
+}
+
+/* ── PROPERTY ALERTS LIST ── */
+async function loadPropertyAlerts() {
+  const container   = document.getElementById('alertsContainer');
+  const searchInput = document.getElementById('alertSearchInput');
+  if (!container) return;
+
+  try {
+    const q    = query(collection(db, 'propertyAlerts'), orderBy('date', 'desc'), limit(100));
+    const snap = await getDocs(q);
+
+    let alerts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+    function render(list) {
+      if (!list.length) {
+        container.innerHTML = `
+          <div class="posts-empty">
+            <i class="fas fa-bell-slash"></i>
+            <h3>No Alerts Yet</h3>
+            <p>When visitors register a property alert, they'll appear here.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = '';
+      list.forEach(a => {
+        const row = document.createElement('div');
+        row.className = 'post-row';
+        row.style.cssText = 'grid-template-columns: 1fr auto;';
+        row.innerHTML = `
+          <div class="post-row-info">
+            <h4>${safe(a.name || '—')}</h4>
+            <div class="post-row-meta">
+              <span class="post-type-badge blog" style="background:rgba(201,168,76,0.12);color:var(--gold);border-color:var(--gold-border);">
+                <i class="fas fa-map-marker-alt"></i> ${safe(a.locations || 'Any')}
+              </span>
+              <span class="post-date"><i class="fas fa-coins"></i> ${safe(a.budget || '—')}</span>
+              <span class="post-date"><i class="fas fa-expand-arrows-alt"></i> ${safe(a.plotSize || '—')}</span>
+              <span class="post-date"><i class="fas fa-tag"></i> ${safe(a.type || '—')}</span>
+              <span class="post-date"><i class="fas fa-calendar-alt"></i> ${fmtDate(a.date)}</span>
+            </div>
+          </div>
+          <div class="post-row-actions">
+            <a href="https://wa.me/${a.phone ? a.phone.replace(/\D/g,'') : ''}?text=Hello%20${encodeURIComponent(a.name || '')},%20we%20have%20a%20property%20matching%20your%20alert%20on%20OGA%20DAVE%20CONCEPTS"
+               target="_blank" class="btn-edit" title="WhatsApp ${safe(a.name)}" style="border-color:rgba(34,197,94,0.3);color:#22c55e;">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:${safe(a.email)}?subject=Property%20Alert%20Match%20-%20OGA%20DAVE%20CONCEPTS&body=Hello%20${encodeURIComponent(a.name || '')},%0A%0AWe%20have%20a%20property%20matching%20your%20criteria."
+               class="btn-edit" title="Email ${safe(a.name)}" style="text-decoration:none;">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <button class="btn-delete" onclick="deleteAlert('${a.id}')" title="Delete alert">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>`;
+        container.appendChild(row);
+      });
+    }
+
+    render(alerts);
+
+    searchInput?.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      const filtered = alerts.filter(a =>
+        (a.name || '').toLowerCase().includes(q) ||
+        (a.email || '').toLowerCase().includes(q) ||
+        (a.locations || '').toLowerCase().includes(q) ||
+        (a.budget || '').toLowerCase().includes(q)
+      );
+      render(filtered);
+    });
+
+  } catch (err) {
+    console.error('Load alerts error:', err);
+    container.innerHTML = `<div class="posts-empty"><i class="fas fa-exclamation-circle"></i><h3>Error loading alerts</h3><p>${err.message}</p></div>`;
+  }
+}
+
+window.deleteAlert = async (id) => {
+  const res = await Swal.fire({
+    title: 'Delete this alert?', icon: 'warning',
+    showCancelButton: true, confirmButtonColor: '#ef4444',
+    cancelButtonColor: '#C9A84C', confirmButtonText: 'Yes, delete',
+    background: '#141414', color: '#F2EFE8'
+  });
+  if (!res.isConfirmed) return;
+  try {
+    await deleteDoc(doc(db, 'propertyAlerts', id));
+    toast('success', 'Alert deleted');
+    loadPropertyAlerts();
+    loadExtendedAnalytics();
+  } catch (err) {
+    toast('error', 'Delete failed', err.message);
+  }
+};
+
+/* ── NEWSLETTER SUBSCRIBERS LIST ── */
+async function loadSubscribers() {
+  const container = document.getElementById('subscribersContainer');
+  if (!container) return;
+
+  try {
+    const q    = query(collection(db, 'newsletter'), orderBy('date', 'desc'), limit(200));
+    const snap = await getDocs(q);
+
+    if (snap.empty) {
+      container.innerHTML = `
+        <div class="posts-empty">
+          <i class="fas fa-envelope-open"></i>
+          <h3>No Subscribers Yet</h3>
+          <p>Newsletter sign-ups will appear here as visitors subscribe.</p>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = '';
+
+    // Export CSV button
+    const exportBar = document.createElement('div');
+    exportBar.style.cssText = 'margin-bottom:16px;display:flex;justify-content:flex-end;';
+    exportBar.innerHTML = `
+      <button onclick="exportSubscribersCSV()" class="btn-submit" style="padding:10px 20px;font-size:0.82rem;">
+        <i class="fas fa-download"></i> Export CSV
+      </button>`;
+    container.appendChild(exportBar);
+
+    const subList = document.createElement('div');
+    subList.className = 'posts-list';
+    container.appendChild(subList);
+
+    window._subscriberData = [];
+
+    snap.forEach(d => {
+      const s = { id: d.id, ...d.data() };
+      window._subscriberData.push(s);
+
+      const row = document.createElement('div');
+      row.className = 'post-row';
+      row.style.cssText = 'grid-template-columns: 1fr auto;';
+      row.innerHTML = `
+        <div class="post-row-info">
+          <h4>${safe(s.email || '—')}</h4>
+          <div class="post-row-meta">
+            <span class="post-type-badge blog">Newsletter</span>
+            <span class="post-date"><i class="fas fa-calendar-alt"></i> ${fmtDate(s.date)}</span>
+          </div>
+        </div>
+        <div class="post-row-actions">
+          <a href="mailto:${safe(s.email)}" class="btn-edit" title="Email subscriber" style="text-decoration:none;">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <button class="btn-delete" onclick="deleteSubscriber('${s.id}')" title="Remove subscriber">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>`;
+      subList.appendChild(row);
+    });
+
+  } catch (err) {
+    console.error('Load subscribers error:', err);
+    container.innerHTML = `<div class="posts-empty"><i class="fas fa-exclamation-circle"></i><h3>Error</h3><p>${err.message}</p></div>`;
+  }
+}
+
+window.deleteSubscriber = async (id) => {
+  const res = await Swal.fire({
+    title: 'Remove subscriber?', icon: 'warning',
+    showCancelButton: true, confirmButtonColor: '#ef4444',
+    cancelButtonColor: '#C9A84C', confirmButtonText: 'Remove',
+    background: '#141414', color: '#F2EFE8'
+  });
+  if (!res.isConfirmed) return;
+  try {
+    await deleteDoc(doc(db, 'newsletter', id));
+    toast('success', 'Subscriber removed');
+    loadSubscribers();
+    loadExtendedAnalytics();
+  } catch (err) {
+    toast('error', 'Failed', err.message);
+  }
+};
+
+window.exportSubscribersCSV = () => {
+  const data = window._subscriberData || [];
+  if (!data.length) { toast('warning', 'No subscribers to export'); return; }
+  const rows = ['Email,Date'];
+  data.forEach(s => rows.push(`"${s.email || ''}","${fmtDate(s.date)}"`));
+  const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `ogadave-newsletter-subscribers-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+/* ── RESOURCE LEADS LIST (from learn.html gate) ── */
+async function loadResourceLeads() {
+  // Could be added as another panel — stored in Firestore 'resourceLeads'
+  // Included here for future expansion
+}
+
+/* ── PATCH: extend startListeners to also load leads data ── */
+const _origStartListeners = typeof startListeners === 'function' ? startListeners : null;
+
+/* ── PATCH: extend panel switching for new panels ── */
+const _origSwitchPanel = window.switchPanel;
+window.switchPanel = function(name) {
+  _origSwitchPanel(name);
+  if (name === 'alerts')      loadPropertyAlerts();
+  if (name === 'subscribers') loadSubscribers();
+};
+
+/* ── PATCH: extend onAuthStateChanged handler to load extended analytics ── */
+// We hook into the existing auth flow by checking if user is logged in
+// and running extended analytics after main analytics
+const _extAnalyticsInterval = setInterval(() => {
+  const dashboardEl = document.getElementById('dashboardWrap');
+  if (dashboardEl && !dashboardEl.classList.contains('hidden')) {
+    loadExtendedAnalytics();
+    clearInterval(_extAnalyticsInterval);
+    // Refresh every 5 minutes
+    setInterval(loadExtendedAnalytics, 300000);
+  }
+}, 1000);

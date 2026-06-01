@@ -190,7 +190,7 @@
     .panel.active { display:block; }
 
     /* ── ANALYTICS CARDS ── */
-    .analytics-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
+    .analytics-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:32px; }
     .analytics-card {
       background:var(--surface-2); border:1px solid var(--gold-border);
       border-radius:var(--radius-md); padding:24px 20px;
@@ -445,15 +445,28 @@
           <span class="badge-count" id="sidebarPostCount">0</span>
         </button>
 
+        <div class="nav-group-label">Leads</div>
+        <button class="sidebar-link" data-panel="alerts">
+          <i class="fas fa-bell"></i> Property Alerts
+          <span class="badge-count" id="sidebarAlertCount">0</span>
+        </button>
+        <button class="sidebar-link" data-panel="subscribers">
+          <i class="fas fa-envelope"></i> Newsletter Subs
+          <span class="badge-count" id="sidebarSubCount">0</span>
+        </button>
+
         <div class="nav-group-label">Site</div>
-        <a href="index.html" target="_blank" class="sidebar-link">
+        <a href="../index.html" target="_blank" class="sidebar-link">
           <i class="fas fa-external-link-alt"></i> View Website
         </a>
-        <a href="blog-detail.html" target="_blank" class="sidebar-link">
+        <a href="../blog-detail.html" target="_blank" class="sidebar-link">
           <i class="fas fa-newspaper"></i> View Blog
         </a>
-        <a href="airdrop.html" target="_blank" class="sidebar-link">
+        <a href="../airdrop.html" target="_blank" class="sidebar-link">
           <i class="fas fa-gift"></i> View Airdrops
+        </a>
+        <a href="../learn.html" target="_blank" class="sidebar-link">
+          <i class="fas fa-graduation-cap"></i> View Learn Hub
         </a>
       </nav>
 
@@ -501,6 +514,16 @@
             <div class="card-icon"><i class="fas fa-star"></i></div>
             <div class="card-value" id="newAirdrops">0</div>
             <div class="card-label">New Airdrops</div>
+          </div>
+          <div class="analytics-card">
+            <div class="card-icon"><i class="fas fa-bell"></i></div>
+            <div class="card-value" id="totalAlerts">0</div>
+            <div class="card-label">Property Alerts</div>
+          </div>
+          <div class="analytics-card">
+            <div class="card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="card-value" id="totalSubscribers">0</div>
+            <div class="card-label">Newsletter Subs</div>
           </div>
         </div>
 
@@ -717,6 +740,39 @@
         </div>
 
         <div class="posts-list" id="postsContainer">
+          <div class="posts-empty"><i class="fas fa-spinner fa-spin" style="opacity:0.5;"></i></div>
+        </div>
+      </div>
+
+
+      <!-- ── PROPERTY ALERTS PANEL ── -->
+      <div class="panel" id="panel-alerts">
+        <div class="topbar">
+          <div class="topbar-title">
+            <h1>Property <span style="color:var(--gold);font-style:italic;">Alerts</span></h1>
+            <p>Visitors who registered to be notified when matching properties become available.</p>
+          </div>
+          <div class="topbar-actions">
+            <div class="posts-search">
+              <i class="fas fa-search"></i>
+              <input type="text" id="alertSearchInput" placeholder="Search by name or location...">
+            </div>
+          </div>
+        </div>
+        <div id="alertsContainer" class="posts-list">
+          <div class="posts-empty"><i class="fas fa-spinner fa-spin" style="opacity:0.5;"></i></div>
+        </div>
+      </div>
+
+      <!-- ── NEWSLETTER SUBSCRIBERS PANEL ── -->
+      <div class="panel" id="panel-subscribers">
+        <div class="topbar">
+          <div class="topbar-title">
+            <h1>Newsletter <span style="color:var(--gold);font-style:italic;">Subscribers</span></h1>
+            <p>Email subscribers from the newsletter sign-up forms across the site.</p>
+          </div>
+        </div>
+        <div id="subscribersContainer" class="posts-list">
           <div class="posts-empty"><i class="fas fa-spinner fa-spin" style="opacity:0.5;"></i></div>
         </div>
       </div>

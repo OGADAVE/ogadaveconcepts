@@ -440,9 +440,16 @@
         <button class="sidebar-link" data-panel="airdrop">
           <i class="fas fa-parachute-box"></i> New Airdrop
         </button>
+        <button class="sidebar-link" data-panel="course">
+          <i class="fab fa-youtube"></i> New Video Course
+        </button>
         <button class="sidebar-link" data-panel="manage">
           <i class="fas fa-layer-group"></i> Manage Posts
           <span class="badge-count" id="sidebarPostCount">0</span>
+        </button>
+        <button class="sidebar-link" data-panel="manageCourses">
+          <i class="fas fa-film"></i> Manage Courses
+          <span class="badge-count" id="sidebarCourseCount">0</span>
         </button>
 
         <div class="nav-group-label">Leads</div>
@@ -456,17 +463,20 @@
         </button>
 
         <div class="nav-group-label">Site</div>
-        <a href="../index.html" target="_blank" class="sidebar-link">
+        <a href="index.html" target="_blank" class="sidebar-link">
           <i class="fas fa-external-link-alt"></i> View Website
         </a>
-        <a href="../blog-detail.html" target="_blank" class="sidebar-link">
+        <a href="blog-detail.html" target="_blank" class="sidebar-link">
           <i class="fas fa-newspaper"></i> View Blog
         </a>
-        <a href="../airdrop.html" target="_blank" class="sidebar-link">
+        <a href="airdrop.html" target="_blank" class="sidebar-link">
           <i class="fas fa-gift"></i> View Airdrops
         </a>
-        <a href="../learn.html" target="_blank" class="sidebar-link">
+        <a href="learn.html" target="_blank" class="sidebar-link">
           <i class="fas fa-graduation-cap"></i> View Learn Hub
+        </a>
+        <a href="https://www.youtube.com/@ogadaveconcepts" target="_blank" class="sidebar-link">
+          <i class="fab fa-youtube"></i> YouTube Channel
         </a>
       </nav>
 
@@ -524,6 +534,11 @@
             <div class="card-icon"><i class="fas fa-envelope"></i></div>
             <div class="card-value" id="totalSubscribers">0</div>
             <div class="card-label">Newsletter Subs</div>
+          </div>
+          <div class="analytics-card">
+            <div class="card-icon"><i class="fab fa-youtube"></i></div>
+            <div class="card-value" id="totalCourses">0</div>
+            <div class="card-label">Video Courses</div>
           </div>
         </div>
 
@@ -777,6 +792,104 @@
         </div>
       </div>
 
+
+      <!-- ── NEW COURSE PANEL ── -->
+      <div class="panel" id="panel-course">
+        <div class="topbar">
+          <div class="topbar-title">
+            <h1>New <span style="color:var(--gold);font-style:italic;">Video Course</span></h1>
+            <p>Paste any YouTube link — it goes live on your Learn page instantly.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-card-header">
+            <div class="form-card-icon" style="background:rgba(255,0,0,0.1);border-color:rgba(255,0,0,0.2);">
+              <i class="fab fa-youtube" style="color:#ff0000;"></i>
+            </div>
+            <div>
+              <h2>Video Details</h2>
+              <p>All fields help with SEO and user experience on the Learn page</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field span2">
+              <label>YouTube Video URL *</label>
+              <input id="courseYTUrl" type="url" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/...">
+              <div id="courseThumbPreview" style="margin-top:10px;display:none;">
+                <img id="courseThumbImg" src="" alt="Thumbnail preview" style="width:100%;max-width:320px;border-radius:var(--radius-sm);border:1px solid var(--gold-border);">
+                <p style="font-size:0.75rem;color:var(--green);margin-top:6px;"><i class="fas fa-check-circle"></i> Valid YouTube URL — thumbnail loaded</p>
+              </div>
+            </div>
+            <div class="field span2">
+              <label>Video Title *</label>
+              <input id="courseTitle" type="text" placeholder="e.g. How to Buy USDT in Nigeria in 2025 (Step by Step)">
+            </div>
+            <div class="field span2">
+              <label>Short Description</label>
+              <textarea id="courseDescription" rows="3" placeholder="What will viewers learn? Keep it to 1–2 sentences."></textarea>
+            </div>
+            <div class="field">
+              <label>Category</label>
+              <select id="courseCategory">
+                <option value="Crypto">Crypto</option>
+                <option value="Tech">Tech</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Business">Business</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Level</label>
+              <select id="courseLevel">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Duration (e.g. 12:34)</label>
+              <input id="courseDuration" type="text" placeholder="e.g. 8:42">
+            </div>
+            <div class="field">
+              <label>Tags</label>
+              <div class="toggles-row" style="padding:10px 0;">
+                <label class="toggle-item">
+                  <span class="toggle-switch"><input type="checkbox" id="courseIsFeatured"><span class="toggle-slider"></span></span>
+                  <label for="courseIsFeatured">⭐ Feature This Video</label>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <button class="btn-submit" id="publishCourseBtn">
+              <span class="btn-label"><i class="fab fa-youtube"></i> Publish Video</span>
+              <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i> Publishing...</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── MANAGE COURSES PANEL ── -->
+      <div class="panel" id="panel-manageCourses">
+        <div class="topbar">
+          <div class="topbar-title">
+            <h1>Manage <span style="color:var(--gold);font-style:italic;">Video Courses</span></h1>
+            <p>Edit or delete video courses shown on your Learn page.</p>
+          </div>
+          <div class="topbar-actions">
+            <div class="posts-search">
+              <i class="fas fa-search"></i>
+              <input type="text" id="courseSearchInput" placeholder="Search videos...">
+            </div>
+          </div>
+        </div>
+        <div class="posts-list" id="coursesContainer">
+          <div class="posts-empty"><i class="fas fa-spinner fa-spin" style="opacity:0.5;"></i></div>
+        </div>
+      </div>
+
     </main>
   </div>
 
@@ -843,6 +956,24 @@
                 <label for="editFeatured">📌 Featured</label>
               </label>
             </div>
+          </div>
+
+          <!-- Course-only fields -->
+          <div class="field hidden" id="editYTUrlField">
+            <label>YouTube URL</label>
+            <input id="editYTUrl" type="url" placeholder="https://www.youtube.com/watch?v=...">
+          </div>
+          <div class="field hidden" id="editDurationField">
+            <label>Duration</label>
+            <input id="editDuration" type="text" placeholder="e.g. 8:42">
+          </div>
+          <div class="field hidden" id="editLevelField">
+            <label>Level</label>
+            <select id="editLevel">
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
           </div>
           <div class="field">
             <label>Replace Image</label>

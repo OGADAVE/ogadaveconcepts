@@ -919,3 +919,382 @@ const _extAnalyticsInterval = setInterval(() => {
     setInterval(loadExtendedAnalytics, 300000);
   }
 }, 1000);
+
+/* =====================================================
+   COURSES MANAGEMENT
+   Add · Edit · Delete · Manage Video Courses
+   ===================================================== */
+
+/* ── Extract YouTube ID from any URL format ── */
+function extractYTId(url) {
+  if (!url) return null;
+  const patterns = [
+    /youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+    /youtu\.be\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+/* ── Live thumbnail preview when URL is pasted ── */
+(function initYTPreview() {
+  const urlInput    = document.getElementById('courseYTUrl');
+  const previewWrap = document.getElementById('courseThumbPreview');
+  const previewImg  = document.getElementById('courseThumbImg');
+  if (!urlInput) return;
+
+  let debounceTimer;
+  urlInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const ytId = extractYTId(urlInput.value.trim());
+      if (ytId) {
+        previewImg.src         = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+        previewWrap.style.display = 'block';
+      } else {
+        previewWrap.style.display = 'none';
+        previewImg.src = '';
+      }
+    }, 600);
+  });
+})();
+
+/* ── Publish new course ── */
+(function initPublishCourse() {
+  const btn = document.getElementById('publishCourseBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', async () => {
+    const ytUrl   = document.getElementById('courseYTUrl')?.value.trim();
+    const title   = document.getElementById('courseTitle')?.value.trim();
+    const desc    = document.getElementById('courseDescription')?.value.trim();
+    const cat     = document.getElementById('courseCategory')?.value;
+    const level   = document.getElementById('courseLevel')?.value;
+    const dur     = document.getElementById('courseDuration')?.value.trim();
+    const feat    = document.getElementById('courseIsFeatured')?.checked;
+
+    /* Validate */
+    if (!ytUrl || !title) {
+      return toast('warning', 'Missing Fields', 'YouTube URL and title are required.');
+    }
+    const ytId = extractYTId(ytUrl);
+    if (!ytId) {
+      return toast('warning', 'Invalid YouTube URL',
+        'Paste a full YouTube link, e.g. https://www.youtube.com/watch?v=xxxxx or https://youtu.be/xxxxx');
+    }
+
+    setLoading(btn, true);
+
+    try {
+      await addDoc(collection(db, 'courses'), {
+        title,
+        description: desc || '',
+        youtubeUrl:  ytUrl,
+        youtubeId:   ytId,
+        category:    cat  || 'Crypto',
+        level:       level || 'Beginner',
+        duration:    dur  || '',
+        isFeatured:  feat || false,
+        date: serverTimestamp()
+      });
+
+      toast('success', 'Video Published! 🎬');
+
+      /* Reset form */
+      document.getElementById('courseYTUrl').value       = '';
+      document.getElementById('courseTitle').value       = '';
+      document.getElementById('courseDescription').value = '';
+      document.getElementById('courseDuration').value    = '';
+      document.getElementById('courseIsFeatured').checked = false;
+      document.getElementById('courseThumbPreview').style.display = 'none';
+
+      loadCoursesAnalytics();
+      switchPanel('manageCourses');
+
+    } catch (err) {
+      console.error('[Course publish]', err);
+      toast('error', 'Publish Failed', err.message);
+    }
+
+    setLoading(btn, false);
+  });
+})();
+
+/* ── Load & render manage courses panel ── */
+async function loadManageCourses() {
+  const container   = document.getElementById('coursesContainer');
+  const searchInput = document.getElementById('courseSearchInput');
+  if (!container) return;
+
+  container.innerHTML = `<div class="posts-empty"><i class="fas fa-spinner fa-spin" style="opacity:0.5;"></i></div>`;
+
+  try {
+    const q    = query(collection(db, 'courses'), orderBy('date', 'desc'));
+    const snap = await getDocs(q);
+
+    let courses = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+    /* Update sidebar badge */
+    const badge = document.getElementById('sidebarCourseCount');
+    if (badge) badge.textContent = courses.length;
+
+    function render(list) {
+      if (!list.length) {
+        container.innerHTML = `
+          <div class="posts-empty">
+            <i class="fab fa-youtube"></i>
+            <h3>No Video Courses Yet</h3>
+            <p>Click "New Video Course" in the sidebar to publish your first tutorial.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = '';
+      list.forEach(c => {
+        const thumb = c.youtubeId
+          ? `https://img.youtube.com/vi/${c.youtubeId}/default.jpg`
+          : null;
+
+        const row = document.createElement('div');
+        row.className = 'post-row';
+        row.style.cssText = 'grid-template-columns: 64px 1fr auto;';
+        row.innerHTML = `
+          ${thumb
+            ? `<img class="post-row-thumb" src="${thumb}" alt="${safe(c.title)}" loading="lazy"
+                 style="border-radius:var(--radius-sm);object-fit:cover;">`
+            : `<div class="post-row-thumb-placeholder"><i class="fab fa-youtube" style="color:#ff0000;"></i></div>`
+          }
+          <div class="post-row-info">
+            <h4>${safe(c.title)}</h4>
+            <div class="post-row-meta">
+              <span class="post-type-badge blog" style="background:rgba(255,0,0,0.1);color:#ff0000;border-color:rgba(255,0,0,0.2);">
+                <i class="fab fa-youtube"></i> ${safe(c.category || 'Crypto')}
+              </span>
+              ${c.level ? `<span class="post-date"><i class="fas fa-signal"></i> ${safe(c.level)}</span>` : ''}
+              ${c.duration ? `<span class="post-date"><i class="fas fa-clock"></i> ${safe(c.duration)}</span>` : ''}
+              <span class="post-date"><i class="fas fa-calendar-alt"></i> ${fmtDate(c.date)}</span>
+              ${c.isFeatured ? `<span class="mini-badge featured">⭐ Featured</span>` : ''}
+            </div>
+          </div>
+          <div class="post-row-actions">
+            <a href="https://www.youtube.com/watch?v=${safe(c.youtubeId || '')}"
+               target="_blank" class="btn-edit"
+               title="Watch on YouTube"
+               style="border-color:rgba(255,0,0,0.2);color:#ff0000;text-decoration:none;">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <button class="btn-edit" onclick="editCourse('${c.id}')" title="Edit">
+              <i class="fas fa-pen"></i>
+            </button>
+            <button class="btn-delete" onclick="deleteCourse('${c.id}')" title="Delete">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>`;
+        container.appendChild(row);
+      });
+    }
+
+    render(courses);
+
+    /* Search */
+    searchInput?.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      render(courses.filter(c =>
+        (c.title || '').toLowerCase().includes(q) ||
+        (c.category || '').toLowerCase().includes(q) ||
+        (c.description || '').toLowerCase().includes(q)
+      ));
+    });
+
+  } catch (err) {
+    console.error('[Courses load]', err);
+    container.innerHTML = `
+      <div class="posts-empty">
+        <i class="fas fa-exclamation-circle"></i>
+        <h3>Error Loading Courses</h3>
+        <p>${err.message}</p>
+      </div>`;
+  }
+}
+
+/* ── Delete course ── */
+window.deleteCourse = async (id) => {
+  const res = await Swal.fire({
+    title: 'Delete this video?',
+    text: 'It will be removed from your Learn page immediately.',
+    icon: 'warning', showCancelButton: true,
+    confirmButtonColor: '#ef4444', cancelButtonColor: '#C9A84C',
+    confirmButtonText: 'Yes, delete', background: '#141414', color: '#F2EFE8'
+  });
+  if (!res.isConfirmed) return;
+
+  try {
+    await deleteDoc(doc(db, 'courses', id));
+    toast('success', 'Video Removed');
+    loadManageCourses();
+    loadCoursesAnalytics();
+  } catch (err) {
+    toast('error', 'Delete Failed', err.message);
+  }
+};
+
+/* ── Edit course ── */
+window.editCourse = async (id) => {
+  currentId   = id;
+  currentType = 'course';
+
+  const snap = await getDoc(doc(db, 'courses', id));
+  if (!snap.exists()) { toast('error', 'Course not found'); return; }
+  const d = snap.data();
+
+  /* Configure modal for course */
+  editModalTitle.textContent = 'Edit Video Course';
+
+  /* Hide all type-specific fields first */
+  document.getElementById('editContentField')?.classList.add('hidden');
+  document.getElementById('editCategoryField')?.classList.remove('hidden');
+  document.getElementById('editRewardField')?.classList.add('hidden');
+  document.getElementById('editReferralField')?.classList.add('hidden');
+  document.getElementById('editEndDateField')?.classList.add('hidden');
+  document.getElementById('editTagsField')?.classList.add('hidden');
+
+  /* Show course-only fields */
+  document.getElementById('editYTUrlField')?.classList.remove('hidden');
+  document.getElementById('editDurationField')?.classList.remove('hidden');
+  document.getElementById('editLevelField')?.classList.remove('hidden');
+
+  /* Populate common */
+  editTitle.value       = d.title       || '';
+  editDescription.value = d.description || '';
+  editLink.value        = d.youtubeUrl  || '';
+  editImage.value       = '';
+  editPreview.style.display = 'none';
+
+  /* Category */
+  const catSelect = document.getElementById('editCategory');
+  if (catSelect) catSelect.value = d.category || 'Crypto';
+
+  /* Course-specific */
+  const ytUrlEl   = document.getElementById('editYTUrl');
+  const durEl     = document.getElementById('editDuration');
+  const levelEl   = document.getElementById('editLevel');
+  const featEl    = document.getElementById('editFeatured');
+
+  if (ytUrlEl)  ytUrlEl.value  = d.youtubeUrl || '';
+  if (durEl)    durEl.value    = d.duration   || '';
+  if (levelEl)  levelEl.value  = d.level      || 'Beginner';
+
+  /* Repurpose featured toggle */
+  const tagsField = document.getElementById('editTagsField');
+  if (tagsField) {
+    tagsField.classList.remove('hidden');
+    // Hide hot/new — only show featured for courses
+    document.getElementById('editHot')?.closest('.toggle-item')?.style.setProperty('display','none');
+    document.getElementById('editNew')?.closest('.toggle-item')?.style.setProperty('display','none');
+  }
+  if (featEl) featEl.checked = !!d.isFeatured;
+
+  /* Show thumbnail preview in modal */
+  if (d.youtubeId) {
+    editPreview.src = `https://img.youtube.com/vi/${d.youtubeId}/hqdefault.jpg`;
+    editPreview.style.display = 'block';
+  }
+
+  editModal.classList.add('show');
+};
+
+/* ── Patch saveEditBtn to handle course type ── */
+const _origSaveHandler = saveEditBtn.onclick;
+saveEditBtn.addEventListener('click', async () => {
+  if (currentType !== 'course') return; // handled by existing listener
+
+  const title   = editTitle.value.trim();
+  const desc    = editDescription.value.trim();
+  const ytUrl   = document.getElementById('editYTUrl')?.value.trim();
+  const dur     = document.getElementById('editDuration')?.value.trim();
+  const level   = document.getElementById('editLevel')?.value;
+  const cat     = document.getElementById('editCategory')?.value;
+  const feat    = document.getElementById('editFeatured')?.checked;
+
+  if (!title) { toast('warning', 'Title is required'); return; }
+
+  saveEditBtn.disabled    = true;
+  saveEditBtn.innerHTML   = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+
+  try {
+    const updateData = {
+      title, description: desc || '',
+      youtubeUrl:  ytUrl  || '',
+      youtubeId:   extractYTId(ytUrl) || '',
+      category:    cat   || 'Crypto',
+      level:       level || 'Beginner',
+      duration:    dur   || '',
+      isFeatured:  feat  || false,
+    };
+
+    await updateDoc(doc(db, 'courses', currentId), updateData);
+    toast('success', 'Course Updated ✅');
+    editModal.classList.remove('show');
+
+    /* Restore hot/new toggle visibility */
+    document.getElementById('editHot')?.closest('.toggle-item')?.style.removeProperty('display');
+    document.getElementById('editNew')?.closest('.toggle-item')?.style.removeProperty('display');
+
+    loadManageCourses();
+
+  } catch (err) {
+    console.error('[Course edit save]', err);
+    toast('error', 'Save Failed', err.message);
+  }
+
+  saveEditBtn.disabled  = false;
+  saveEditBtn.innerHTML = '<i class="fas fa-save"></i> Save Changes';
+});
+
+/* ── Courses analytics ── */
+async function loadCoursesAnalytics() {
+  try {
+    const snap  = await getDocs(collection(db, 'courses'));
+    const el    = document.getElementById('totalCourses');
+    const badge = document.getElementById('sidebarCourseCount');
+    if (el)    el.textContent    = snap.size;
+    if (badge) badge.textContent = snap.size;
+  } catch (err) {
+    console.error('[Courses analytics]', err);
+  }
+}
+
+/* ── Patch panel switching to load courses panels ── */
+const _prevSwitchPanel = window.switchPanel;
+window.switchPanel = function(name) {
+  _prevSwitchPanel(name);
+  if (name === 'manageCourses') loadManageCourses();
+};
+
+/* ── Close edit modal: reset course-specific fields ── */
+const origCloseEditModal = window.closeEditModal;
+window.closeEditModal = () => {
+  origCloseEditModal?.();
+  /* Restore hot/new visibility in case they were hidden for course edit */
+  document.getElementById('editHot')?.closest('.toggle-item')?.style.removeProperty('display');
+  document.getElementById('editNew')?.closest('.toggle-item')?.style.removeProperty('display');
+  /* Hide course-only fields */
+  document.getElementById('editYTUrlField')?.classList.add('hidden');
+  document.getElementById('editDurationField')?.classList.add('hidden');
+  document.getElementById('editLevelField')?.classList.add('hidden');
+  currentType = null;
+};
+
+/* ── Auto-load courses analytics when dashboard is ready ── */
+const _courseAnalyticsInterval = setInterval(() => {
+  const dashEl = document.getElementById('dashboardWrap');
+  if (dashEl && !dashEl.classList.contains('hidden')) {
+    loadCoursesAnalytics();
+    clearInterval(_courseAnalyticsInterval);
+  }
+}, 1200);
